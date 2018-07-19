@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import NavigationDialog from './NavigationDialog';
+import NavigationDialog from './NavigationDialog';
 import { withRouter } from 'react-router-dom';
 //import Navbar from './Navbar';
 import Nav from './Nav';
@@ -23,15 +23,15 @@ class NavigationButton extends Component {
 		const { history } = this.props;
 
 		this.unsubscribe = history.listen(this.handleLocationChange);
-		this.handleLocationChange(history.location);
+		this.handleLocationChange();
 	}
 
 	componentWillUnmount() {
 		if (this.unsubscribe) this.unsubscribe();
 	}
 
-	handleLocationChange = location => {
-		if (location.pathname === '/' && !window.checkIfMobile()) {
+	handleLocationChange = () => {
+		if (!window.checkIfMobile()) {
 			this.setState({ compact: false })
 		} else {
 			this.setState({ compact: true })
@@ -43,15 +43,15 @@ class NavigationButton extends Component {
 		return (
 			<div className="Navigation-wrapper">
 				{
-					// this.state.compact ?
-					// 	<div>
-					// 		<button className="Button NavigationButton" onClick={this.handleClick}>
-					// 			<i className={"fa fa-" + (this.state.navigation ? 'times' : 'bars')} />
-					// 		</button>
-					// 		{
-					// 			this.state.navigation ? <NavigationDialog onTransition={()=>{}} onClose={this.handleClose} /> : ""
-					// 		}
-					// 	</div> :
+					this.state.compact ?
+						<div>
+							<button className="Button NavigationButton" onClick={this.handleClick}>
+								<i className={"fa fa-" + (this.state.navigation ? 'times' : 'bars')} />
+							</button>
+							{
+								this.state.navigation ? <NavigationDialog onTransition={()=>{}} onClose={this.handleClose} /> : ""
+							}
+						</div> :
 						<Nav />
 				}
 			</div>

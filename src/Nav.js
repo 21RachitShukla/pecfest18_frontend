@@ -15,6 +15,8 @@ class Nav extends Component {
   }
 
   render() {
+    this._content = document.querySelector('.content');
+    this._nav = document.querySelector('nav');
     return (
       this.state.navigation ?
         <div>
@@ -56,7 +58,9 @@ class Nav extends Component {
               </a>
             </div>
             <a className="disc l7 toggle" onClick={() => {
-              this.handleClose()
+              this.handleClose();
+              this._content.style.opacity = 1;
+              this._nav.style.transform = `scale(${1})`;
             }}>
               Close
             </a>
@@ -65,7 +69,9 @@ class Nav extends Component {
         <div>
           <nav className="top-right open">
             <a className="disc l7 toggle" onClick={() => {
-              this.handleClick()
+              this.handleClick();
+              this._content.style.opacity = 0.5;
+              this._nav.style.transform = `scale(${1.2})`;
             }}>
               Menu
             </a>
