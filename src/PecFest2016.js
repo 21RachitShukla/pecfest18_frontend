@@ -96,6 +96,7 @@ export default class PecFest2016 extends Component {
                   <li id="l1" onClick={this.handleClick.bind(this, 0)} className="bullet"> </li>
                   <li id="l2" onClick={this.handleClick.bind(this, 0)} className="bullet"> </li>
                   <li id="l3" onClick={this.handleClick.bind(this, 0)} className="bullet"> </li>
+
               </ul>
           </div>
         </div>
