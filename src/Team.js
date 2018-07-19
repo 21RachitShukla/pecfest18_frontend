@@ -93,6 +93,8 @@ export default class Team extends Component {
                   </div>
                 </div>
               </div>
+            </div>
+            <div className="row">
               <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
                 <div className="card_inner">
                   <div className="pad"></div>

@@ -286,7 +286,10 @@ body {
   cursor: pointer;
   margin-top: 50px;
 }
-button {
+
+.submitSignIn {
+  background: rgba(102, 58, 173, 0.8);
+  cursor: pointer;
   right: 0;
   border: 0;
   border-radius: 18px;
@@ -301,13 +304,22 @@ button {
   text-transform: uppercase;
   width: 30%;
 }
-.submitSignIn {
-  background: rgba(102, 58, 173, 0.8);
-  cursor: pointer;
-}
 .submitSignUp {
   background: rgba(43, 46, 56, 0.8);
   cursor: pointer;
+  right: 0;
+  border: 0;
+  border-radius: 18px;
+  color: white;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 23px;
+  font-weight: 500;
+  justify-content: center;
+  margin: 50px;
+  outline: none;
+  padding: 5px;
+  text-transform: uppercase;
+  width: 30%;
 }
 button .fa {
   font-size: 12px;
