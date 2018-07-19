@@ -4,40 +4,40 @@ const links = [
 		name: 'Home',
 		to: '/'
 	},
+  {
+    name: 'Team',
+    to: '/team',
+  },
 	{
 		name: 'Events',
 		to: '/activities',
 	},
+  {
+    name: 'Social',
+    to: '/social'
+  },
 	 {
 	 	name: 'Sponsors',
 	 	to: '/sponsors',
 	 },
-	 {
-	 	name: 'Developers',
-	 	to: '/developers',
-	 	type: 'anotherUrl',
-	 },
-	 {
-	 	name: 'Team',
-	 	to: '/team',
-	 },
-	{
-		name: 'PECFEST 2016',
-		to: '/pecfest2016',
-	},
-	{
-		name: 'Marketing Brochure',
-		to: '/assets/marketingBrochure.pdf',
-		type: 'external'
-	},
-	{
-		name: 'Social',
-		to: '/social'
-	},
+	 // {
+	 // 	name: 'Developers',
+	 // 	to: '/developers',
+	 // 	type: 'anotherUrl',
+	 // },
+	// {
+	// 	name: 'Marketing Brochure',
+	// 	to: '/assets/marketingBrochure.pdf',
+	// 	type: 'external'
+	// },
 	{
 		name: 'Hospitality',
 		to: '/hospitality'
-	}
+	},
+  {
+    name: 'PECFEST 2017',
+    to: '/pecfest2016',
+  }
 
 ]
 

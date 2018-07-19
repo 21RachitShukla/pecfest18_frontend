@@ -47,14 +47,14 @@ export default class PECFEST extends Component {
             {/*<Route path="/hospitality" exact component={Hospi}/>*/}
             <Route path="/team" exact component={Team}/>
             <Route path="/sponsors" exact component={() => <Sponsors data={sponsors}/>}/>
-            {/*<Route path="/social" exact component={() => <YWC data={sponsors}/>}/>*/}
+            <Route path="/social" exact component={() => <YWC data={sponsors}/>}/>
             {/*<Route path="/register" exact component={SignUpOrLogInForm}/>*/}
             {/*<Route path="/activities/Lectures" exact component={Lectures}/>*/}
             {/*<Route path="/developers" exact component={DevelopersPage}/>*/}
             {/*<Route path="/profile" exact component={Profile}/>*/}
             {/*<Route path="/dashboard" exact component={Dashboard}/>*/}
             <Route path="/hospitality" exact component={() => <ComingSoon/>}/>
-            <Route path="/social" exact component={() => <ComingSoon/>}/>
+            {/*<Route path="/social" exact component={() => <ComingSoon/>}/>*/}
             <Route path="/activities" exact component={() => <ComingSoon/>}/>
             <Route path="/register" exact component={() => <ComingSoon/>}/>
           </div>
