@@ -36,7 +36,7 @@ const links = [
 	},
   {
     name: 'PECFEST 2017',
-    to: '/pecfest2016',
+    to: '/pecfest2017',
   }
 
 ]

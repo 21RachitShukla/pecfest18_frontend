@@ -11,7 +11,7 @@ function start() {
     if (typeof window.YT === 'undefined')
       var player;
       player = new window.YT.Player('muteYouTubeVideoPlayer', {
-        videoId: 'y_uUB3CBqOc', // YouTube Video ID
+        videoId: '70xeFk-Fazw', // YouTube Video ID
         playerVars: {
           autoplay: 1,        // Auto-play the video on load
           controls: 0,        // Show pause/play buttons in player
@@ -43,20 +43,20 @@ function start() {
       foot: 0,
     }
 
-    var anim = anime({
-      targets: counts,
-      eve: 50,
-      school: 350,
-      foot: 25000,
-      duration: 3000,
-      easing: 'easeInQuad',
-    });
-
-    anim.update = ({progress}) => {
-      events.innerHTML = 'Events: ' + counts.eve.toFixed() + '+';
-      school.innerHTML = 'Schools: '  + counts.school.toFixed() + '+';
-      foot.innerHTML = 'Footfall: ' + counts.foot.toFixed() + '+';
-    }
+    // var anim = anime({
+    //   targets: counts,
+    //   eve: 50,
+    //   school: 350,
+    //   foot: 25000,
+    //   duration: 3000,
+    //   easing: 'easeInQuad',
+    // });
+    //
+    // anim.update = ({progress}) => {
+    //   events.innerHTML = 'Events: ' + counts.eve.toFixed() + '+';
+    //   school.innerHTML = 'Schools: '  + counts.school.toFixed() + '+';
+    //   foot.innerHTML = 'Footfall: ' + counts.foot.toFixed() + '+';
+    // }
 
 }
 
@@ -83,23 +83,23 @@ export default class PecFest2016 extends Component {
     return (
       <div className="PecFest2016">
         <div id="muteYouTubeVideoPlayer"></div>
-        <div className="filter" style={{ overflowX:'hidden', zIndex: 0 }}>
-          <div className="desc" style={{display:"none"}}>
-            <div className="text" id="pecfest-title" style={{ top:'20%', left:'13%'}}>PECFEST 2016</div>
-            <div className="text" id="events" style={{top:'45%', left:'13%', fontSize:'2.7vh'}}></div>
-            <div className="text" id="schools" style={{ top:'50%', left:'13%', fontSize:'2.7vh'}}></div>
-            <div className="text" id="foot" style={{top:'55%', left:'13%', fontSize:'2.7vh'}}></div>
-          </div>
-          <div id="sidebar" style={{ right:'0%', width:'40px', height:'100%',background:'black', position:'absolute', opacity:0.5}}>
-              <ul id="side-list">
-                  <li id="l0" onClick={this.handleClick.bind(this, 0)} className="bullet"> </li>
-                  <li id="l1" onClick={this.handleClick.bind(this, 0)} className="bullet"> </li>
-                  <li id="l2" onClick={this.handleClick.bind(this, 0)} className="bullet"> </li>
-                  <li id="l3" onClick={this.handleClick.bind(this, 0)} className="bullet"> </li>
+        {/*<div className="filter" style={{ overflowX:'hidden', zIndex: 0 }}>*/}
+          {/*<div className="desc" style={{display:"none"}}>*/}
+            {/*<div className="text" id="pecfest-title" style={{ top:'20%', left:'13%'}}>PECFEST 2016</div>*/}
+            {/*<div className="text" id="events" style={{top:'45%', left:'13%', fontSize:'2.7vh'}}></div>*/}
+            {/*<div className="text" id="schools" style={{ top:'50%', left:'13%', fontSize:'2.7vh'}}></div>*/}
+            {/*<div className="text" id="foot" style={{top:'55%', left:'13%', fontSize:'2.7vh'}}></div>*/}
+          {/*</div>*/}
+          {/*<div id="sidebar" style={{ right:'0%', width:'40px', height:'100%',background:'black', position:'absolute', opacity:0.5}}>*/}
+              {/*<ul id="side-list">*/}
+                  {/*<li id="l0" onClick={this.handleClick.bind(this, 0)} className="bullet"> </li>*/}
+                  {/*<li id="l1" onClick={this.handleClick.bind(this, 0)} className="bullet"> </li>*/}
+                  {/*<li id="l2" onClick={this.handleClick.bind(this, 0)} className="bullet"> </li>*/}
+                  {/*<li id="l3" onClick={this.handleClick.bind(this, 0)} className="bullet"> </li>*/}
 
-              </ul>
-          </div>
-        </div>
+              {/*</ul>*/}
+          {/*</div>*/}
+        {/*</div>*/}
       </div>
     )
   }
