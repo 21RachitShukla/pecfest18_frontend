@@ -59,7 +59,7 @@ export default class PECFEST extends Component {
             <Route path="/register" exact component={() => <ComingSoon/>}/>
           </div>
           <NavigationButton/>
-          <FeedbackDialogBox/>
+          {/*<FeedbackDialogBox/>*/}
         </div>
       </BrowserRouter>
     )
