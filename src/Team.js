@@ -209,7 +209,7 @@ export default class Team extends Component {
               <div className="card_content_bottom">
                 <div className="name">Shyam Pandya</div>
                 <div className="email">shyampandya97@gmail.com</div>
-                <div className="phone"></div>
+                <div className="phone">9592029037</div>
               </div>
             </div>
           </div>
@@ -257,7 +257,9 @@ export default class Team extends Component {
                 <div className="pad"></div>
                 <div className="card_content_top"></div>
                 <div className="card_content_bottom">
-                  <div className="name">Himanish Khurana</div>
+                  <div className="name">Himanish Kumar</div>
+                  <div className="email">himanishkumar82@gmail.com</div>
+                  <div className="phone">9815560072</div>
                 </div>
               </div>
             </div>
@@ -284,6 +286,8 @@ export default class Team extends Component {
                 <div className="card_content_top"></div>
                 <div className="card_content_bottom">
                   <div className="name">Snigdha Singh</div>
+                  <div className="email">snigdha@pecfest.in</div>
+                  <div className="phone">8968675396</div>
                 </div>
               </div>
             </div>
