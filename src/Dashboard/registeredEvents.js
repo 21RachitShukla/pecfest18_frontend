@@ -1,20 +1,16 @@
 import React, { Component } from 'react'
-import './dashboard.css'
+import './index.css'
 
 class registeredEvents extends Component {
     render(){
         return(
-            <div>
-                <div className="grid-event">
-                    <div className="grid-item">{this.props.event}</div>
-                    <div className="grid-item">{this.props.date}</div>
-                    <div className="grid-item">{this.props.venue}</div>
-                    <div className="grid-item">{this.props.time}</div>
-                    <div className="grid-item">{this.props.timeofreg}</div>
-                </div>
-            </div>
-
-
+            <tr>
+                <td>{this.props.event}</td>
+                <td>{this.props.date}</td>
+                <td>{this.props.venue}</td>
+                <td>{this.props.time}</td>
+                //<td>{this.props.timeofreg}</td>
+            </tr>
         )
     }
 }

@@ -13,169 +13,94 @@
     --background_color: #ffffff;
     */
 }
-
-.right-side{
-    grid-column: 9 / 13;		/*start at 5th col line and span 8 cols*/
-    /*6*/
-    color:var(--text_color);
-    background-color: var(--main_color);
-    overflow-y: scroll;
-}
-
-@media screen and (max-width: 800px)
+.flex-container
 {
-    .right-side{
-        display: none;
-    }
-    .left-side{
-    grid-column: 1 / 13; /* start on line 1 and end on line 5 */
-    overflow: scroll;
-    /*2*/
-    color : /*white*/black;
-    }
-
-    ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    }
+	/*padding-top: .1em;*/
+	display: flex;
+	flex-flow:row nowrap;
 }
 
-.left-side{
-    grid-column: 1 / 9; /* start on line 1 and end on line 9 */
-    overflow: hidden;
-    /*background-color: #325b2f/*#519b4f*/;
-    /*3*/
-    height: 620px;
-}
-
-.button{
-    align:left;
-    /*5*/
-    color : var(--text_color);
-    display: inline-grid;
-    border:solid;
-    border-width: 0em .15em .15em 0em;
-    border-color:#f6e6de;
-}
-
-.button:hover{
-    box-shadow: 0px 4px 6px 2px rgba(0,0,0, 0.3) ;
-}
-
-.button_after{
-    box-shadow: 0px 4px 6px 2px rgba(0,0,0, 0.3) ;
-}
-
-._after{
-    box-shadow: 0px 4px 6px 2px rgba(0,0,0, 0.3) ;
-}
-
-.button1{
-    background-color:var(--main_color)/*#5f9bfc*/;
-    width: 50%;
-}
-
-.button2{
-    background-color:var(--main_color)/*#009925*/;
-    width: 50%;
-}
-
-.header{
-    background-color: var(--text_color);
-    /*4*/
-    color : var(--main_color);
-    font-size:18px;
-    padding-top: .3em;
-    
-}
-
-.notifs{
-    height: 75%;
-    overflow: scroll;
-    background-color: /*#F4F142*/white;
-    color : black;
-}
-
-.center{
-    text-align : center;
-}
-
-.notification-window{
-    height:100%;
-    /*background-color: white;*/
-}
-
-.registeredEvents{
-    height:100%;
-    /*background-color: white;*/
-}
-
-#main-div
+.flex_left
 {
-    max-height: 1200px;
-    background-color: var(--background_color);
+	flex: 70%;
+	color: var(--main_color);
+	background-color: var(--background_color);
 }
 
-.grid-item{
-    
+.flex_right
+{
+	flex : 30%;
+	color: var(--text_color);
+	background-color: var(--main_color);
+	height:1620px;
+	padding-top: 0.3em;
+	padding-left: 0.3em;
 }
 
-.remaining-info-user{
-    padding-left:15px;
-    font-size:18px;
+.buttons
+{
+	display:flex;
+	justify-content: space-around;
+	background-color: var(--main_color);
+	color: var(--text_color);
 }
 
-.user-avatar{
-    border-radius: 50%;
-    box-shadow: 0 6px 8px 0 rgba(0,0,0, 0.3);
+.button_internal
+{
+	/*border-style: dotted;
+	padding: 0.3em;
+	border-color : white;
+	border-width: 0.1em;*/
 }
 
-/*If you want your grid layout to contain 4 columns,
-specify the width of the 4 columns, or "auto" if all
- columns should have the same width.*/
-
-.grid-container{
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto ;
-    padding: 0px;
+table
+{
+	width:100%;
+	border-collapse: collapse;
+	overflow-x: scroll;
 }
 
-.grid-container-card{
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: auto auto ;
+th, td
+{
+	text-align:center;
+	font-size:18px;
+	border : 2px solid var(--main_color);
 }
 
-.card {
-    box-shadow: 0 4px 8px 0 rgba(255, 255, 255 ,0.2);
-    transition: 0.3s;
-    width: 80%;
+th
+{
+	background-color: var(--text_color);
+	color : var(--main_color);	
 }
 
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(255, 255, 255,0.3);
+.registration_table
+{
+	overflow-x: scroll;
+	overflow-y: auto;
 }
 
-.container {
-
-    padding-left: .5em;
-    padding-top : .1em;
-    padding-bottom: .5em;
-    background-color:white/*#00cdb6/*f71c10/*f73b11*//*40a814*//*42f4b3*/;
-    color: var(--main_color);
+.notification_table
+{
+	overflow-x: scroll;
+	overflow-y: auto;
 }
 
-::-webkit-scrollbar {
-    width: 0.3em;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: var(--main_color);
-    outline: 1px solid slategrey;
-}
-
-.headings{
-	margin: 0px;
-	color : black;
-	text-align: right;
+@media screen and (max-width: 700px) {
+	.flex-container
+	{
+		display: flex;
+		flex-flow:column-reverse nowrap;
+	}
+	.buttons
+	{
+		display:flex;
+		flex-direction: column;
+		justify-content: space-around;
+		background-color: var(--main_color);
+		color: var(--text_color);
+	}
+	.flex_right
+	{
+		display: none;
+	}
 }

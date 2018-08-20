@@ -11,7 +11,7 @@ class Dashboard extends Component {
     super(props);
     this.displayRegisteredEvents = this.displayRegisteredEvents.bind(this);
     this.displayNotifications = this.displayNotifications.bind(this);
-    this.state = {registeredEvents: false, haveNotifs: false, data: null, loading: true};
+    this.state = {registeredEvents: true, haveNotifs: false, data: null, loading: true};
     //this.getData();
   }
 
@@ -70,27 +70,16 @@ class Dashboard extends Component {
     const events = !this.state.loading && !this.state.error ? this.state.events : [];
     const notifs = this.state.haveNotifs ? this.state.notifs : [];
     let result;
+
     if (registeredEvents) {
-      result = <div id="reg" className="registeredEvents center">
-        <div id="buttons-id" style={{paddingTop: "1em"}}>
-          <div className="button button1 button_after" onClick={this.displayRegisteredEvents}
-               ontouchstart={this.displayRegisteredEvents}><a href="#"><h2>Registered Events</h2></a>
-          </div>
-          <div className="button button2" onClick={this.displayNotifications} ontouchstart={this.displayNotifications}>
-            <a href="#"><h2>Notifications</h2></a>
-          </div>
-        </div>
-        <div className="header _after">
-          <EventRegistrations
-            header="True"
-            event="Event"
-            date="Day"
-            venue="Venue"
-            time="Time"
-            timeofreg="Reg Time"
-          />
-        </div>
-        <div className="notifs _after">
+      result = <div id="reg" className="registration_table">
+        <table>
+          <tr>
+            <th>Event</th>
+            <th>Date</th>
+            <th>Venue</th>
+            <th>Time</th>
+          </tr>
           {
             events.map((event, i) => (
               <EventRegistrations
@@ -103,27 +92,17 @@ class Dashboard extends Component {
               />
             ))
           }
-        </div>
+        </table>
       </div>
     }
     else {
-      result = <div id="notif" className="notification-window center">
-        <div id="buttons-id" style={{paddingTop: "1em"}}>
-          <div className="button button1" onClick={this.displayRegisteredEvents}
-               ontouchstart={this.displayRegisteredEvents}><a href="#"><h2>Registered Events</h2></a>
-          </div>
-          <div className="button button2 button_after" onClick={this.displayNotifications}
-               ontouchstart={this.displayNotifications}><a href="#"><h2>Notifications</h2></a>
-          </div>
-        </div>
-        {/*<h2 className="headings">NOTIFICATIONS</h2>*/}
-        <div className="header _after">
-          <Notifications
-            event="Event"
-            notificationTitle="Title"
-            notificationDetails="Details"/>
-        </div>
-        <div className="notifs _after">
+      result = <div id="notif" className="notification_table">
+        <table>
+        <tr>
+          <th>Event</th>
+          <th>Title Title Title Title Title Title Title Title Title Title Title Title Title TitleTitle Title Title Title Title Title Title Title Title Title Title Title Title Title </th> {/*for checking scroll property of table*/}
+          <th>Details</th>
+        </tr>
           {
             notifs.map((notif, i) => (
               <Notifications
@@ -134,54 +113,61 @@ class Dashboard extends Component {
               />
             ))
           }
-        </div>
+        </table>
       </div>
     }
+
     return (
-      <div id="main-div">
+      <div id="main-div" className="flex-container">
+        
+        <div className="flex_left">
 
-        <div className="grid-container">
-          <div className="grid-item left-side">
-            {result}
+          {/*buttons*/}
+          <div id="buttons-id" className="buttons">
+            <div className="button_internal" onClick={this.displayRegisteredEvents}
+                 ontouchstart={this.displayRegisteredEvents}><a href="#"><h2>Registered Events</h2></a>
+            </div>
+            <div className="button_internal" onClick={this.displayNotifications}
+                 ontouchstart={this.displayNotifications}><a href="#"><h2>Notifications</h2></a>
+            </div>
           </div>
+        
+          {/*Result*/}
+          {result}
+
+        </div>
 
 
-          <div className="grid-item right-side">
-            <div className="center">
-              {/*<h1>PECFEST 2018</h1>*/}
-              <br/><br/><br/><br/><br/><br/><br/><br/><br/>
-              {/*Comment : User Image*/}
-              <img className="user-avatar"
-                   src={blank_img} alt=""
-              />
+        <div className="flex_right">
+          <div>
+            {/*<h1>PECFEST 2018</h1>*/}
+            <img src={blank_img} alt="User Avatar"/>
 
-              <h2>{user.pecfestId}</h2>
-            </div>
-            <div className="remaining-info-user">
-              <hr style={{borderTop: '3px solid'}}/>
-              <p>Participant, Pecfest 2018</p>
+            <h2>{user.pecfestId}</h2>
+          </div>
+          <div>
+            <hr style={{borderTop: '3px solid'}}/>
+            <p>Participant, Pecfest 2018</p>
+            
+            {/*<div className="grid-container-card">
+                              <div className="grid-item">
+                                  <div className="card">
+                                      <div className="container">
+                                          <h4><b>12</b></h4>
+                                          Events Participated
+                                      </div>
+                                  </div>
+                              </div>
 
-              <br/><br/>
-              {/*<div className="grid-container-card">
-                                <div className="grid-item">
-                                    <div className="card">
-                                        <div className="container">
-                                            <h4><b>12</b></h4>
-                                            Events Participated
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="grid-item">
-                                    <div className="card">
-                                        <div className="container">
-                                            <h4><b>10</b></h4>
-                                            Events Won
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>*/}
-            </div>
+                              <div className="grid-item">
+                                  <div className="card">
+                                      <div className="container">
+                                          <h4><b>10</b></h4>
+                                          Events Won
+                                      </div>
+                                  </div>
+                              </div>
+              </div>*/}
           </div>
         </div>
       </div>
