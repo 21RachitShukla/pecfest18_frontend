@@ -1,410 +1,415 @@
-import React, { Component } from 'react';
-import { Motion, spring } from 'react-motion';
+import React, {Component} from 'react';
+import {Motion, spring} from 'react-motion';
 import Loader from './Loader';
 // import SvgCircle from './SvgCircle';
 import './Team.css';
 import './Team.css';
+
 export default class Team extends Component {
 
-    componentDidMount(){
+  componentDidMount() {
 
-        var em = document.getElementsByClassName("email");
-        var phone = document.getElementsByClassName("phone");
-        for (var i of em) {
-            var txt = i.innerHTML;
-            i.innerHTML = "<a href='mailto:"+txt+"' title='"+txt+"'>"+txt+"</a>";
-            // console.log(i.innerHTML);
-        }
-        for (var i of phone) {
-            var txt = i.innerHTML;
-            i.innerHTML = "<a href='tel:+91"+txt+"' title='+91-"+txt+"'>+91-"+txt+"</a>";
-        }
-
-        this.restore = document.body.style.overflow;
-        document.body.style.overflow = 'auto';
-
+    var em = document.getElementsByClassName("email");
+    var phone = document.getElementsByClassName("phone");
+    for (var i of em) {
+      var txt = i.innerHTML;
+      i.innerHTML = "<a href='mailto:" + txt + "' title='" + txt + "'>" + txt + "</a>";
+      // console.log(i.innerHTML);
+    }
+    for (var i of phone) {
+      var txt = i.innerHTML;
+      i.innerHTML = "<a href='tel:+91" + txt + "' title='+91-" + txt + "'>+91-" + txt + "</a>";
     }
 
-    componentWillUnmount() {
-        document.body.style.overflow = this.restore;
+    this.restore = document.body.style.overflow;
+    document.body.style.overflow = 'auto';
 
-    }
+  }
 
-    render() {
-        return (
-    <div className="container-fluid" id="parent_">
+  componentWillUnmount() {
+    document.body.style.overflow = this.restore;
+
+  }
+
+  render() {
+    return (
+      <div className="container-fluid" id="parent_">
         <div className="Team-header">
-            <h1>Team</h1>
+          <h1>Team</h1>
         </div>
         <div className="row heading">
-            <div className="col">
-                <div className="designation">Convener</div>
-                             <div className="Team-card" style={{ backgroundImage: "url(/team/utsav_dahiya.jpg)"}}>
-                    <div className="card_inner">
-                        <div className="pad"></div>
-                        <div className="card_content_top"></div>
-                        <div className="card_content_bottom">
-                            <div className="name">Utsav Dahiya</div>
-                            <div className="email">utsavdahiya333@gmail.com</div>
-                            <div className="phone">8968388133</div></div>
-                    </div>
+          <div className="col">
+            <div className="designation">Convener</div>
+            <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+              <div className="card_inner">
+                <div className="pad"></div>
+                <div className="card_content_top"></div>
+                <div className="card_content_bottom">
+                  <div className="name">Akhilesh Sharma</div>
+                  <div className="email">akhilesh.sharma@pecfest.in</div>
+                  <div className="phone">9888696867</div>
                 </div>
+              </div>
             </div>
-            <div className="col">
-                <div className="designation">Co-Convener</div>
-                <div className="Team-card" style={{ backgroundImage: "url(/team/lakshay.jpg)"}}>
-                    <div className="card_inner">
-                        <div className="pad"></div>
-                        <div className="card_content_top"></div>
-                        <div className="card_content_bottom">
-                            <div className="name">Lakshay Piplani</div>
-                            <div className="email">lakshay.piplani03@gmail.com</div>
-                            <div className="phone">9877299387</div></div>
-                    </div>
+          </div>
+          <div className="col">
+            <div className="designation">Co-Convener</div>
+            <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+              <div className="card_inner">
+                <div className="pad"></div>
+                <div className="card_content_top"></div>
+                <div className="card_content_bottom">
+                  <div className="name">Harsh Sharma</div>
+                  <div className="email">harsh@pecfest.in</div>
+                  <div className="phone">9878235871</div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
         <div className="row heading">
-            <div className="col">
-                <div className="designation">Secretary</div>
-                <div className="row">
-                    <div className="Team-card" style={{ backgroundImage: "url(/team/Eshaan_Sharma.jpg)"}}>
-                    <div className="card_inner">
-                        <div className="pad"></div>
-                        <div className="card_content_top"></div>
-                        <div className="card_content_bottom">
-                            <div className="name">Eshaan Sharma</div>
-                            </div>
-                    </div>
-                    </div>
-                    <div className="Team-card" style={{ backgroundImage: "url(/team/Ayush_Anand.jpg)"}}>
-                    <div className="card_inner">
-                        <div className="pad"></div>
-                        <div className="card_content_top"></div>
-                        <div className="card_content_bottom">
-                            <div className="name">Ayush Anand</div>
-                            <div className="email">ayushanand.pec@gmail.com</div>
-                            <div className="phone">8427353298</div></div>
-                    </div>
-                    </div>
-                    <div className="Team-card" style={{ backgroundImage: "url(/team/Simran_Katyal.jpg)"}}>
-                        <div className="card_inner">
-                            <div className="pad"></div>
-                            <div className="card_content_top"></div>
-                            <div className="card_content_bottom">
-                                <div className="name">Simran Katyal</div>
-                                <div className="email">simrankatyal.pec@gmail.com</div>
-                                <div className="phone">9815022114</div></div>
-                        </div>
-                    </div>
-                    <div className="Team-card" style={{ backgroundImage: "url(/team/Swanya_Singh.jpg)"}}>
-                        <div className="card_inner">
-                            <div className="pad"></div>
-                            <div className="card_content_top"></div>
-                            <div className="card_content_bottom">
-                                <div className="name">Swanya Singh</div>
-                                </div>
-                        </div>
-                    </div>
-
-
+          <div className="col">
+            <div className="designation">Secretaries</div>
+            <div className="row">
+              <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+                <div className="card_inner">
+                  <div className="pad"></div>
+                  <div className="card_content_top"></div>
+                  <div className="card_content_bottom">
+                    <div className="name">Mayank Goyal</div>
+                    <div className="email">mayank@pecfest.in</div>
+                    <div className="phone">9465242818</div>
+                  </div>
                 </div>
-
+              </div>
+              <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+                <div className="card_inner">
+                  <div className="pad"></div>
+                  <div className="card_content_top"></div>
+                  <div className="card_content_bottom">
+                    <div className="name">Shivam Thakur</div>
+                    <div className="email">shivam.pecfest@gmail.com</div>
+                    <div className="phone">9471091084</div>
+                  </div>
+                </div>
+              </div>
             </div>
+            <div className="row">
+              <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+                <div className="card_inner">
+                  <div className="pad"></div>
+                  <div className="card_content_top"></div>
+                  <div className="card_content_bottom">
+                    <div className="name">Shubham Garg</div>
+                    <div className="email">shubham@pecfest.in</div>
+                    <div className="phone">9501157818</div>
+                  </div>
+                </div>
+              </div>
+              <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+                <div className="card_inner">
+                  <div className="pad"></div>
+                  <div className="card_content_top"></div>
+                  <div className="card_content_bottom">
+                    <div className="name">Isha Singla</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="row heading">
-            <div className="col">
-                <div className="designation">Marketing (Branding and Sponsorship)</div>
-            </div>
+          <div className="col">
+            <div className="designation">Marketing (Branding and Sponsorship)</div>
+          </div>
         </div>
         <div className="row">
-            <div className="col">
-                <div className="Team-card" style={{ backgroundImage: "url(/team/mayank_mittal.jpg)"}}>
-                    <div className="card_inner">
-                        <div className="pad"></div>
-                        <div className="card_content_top"></div>
-                        <div className="card_content_bottom">
-                            <div className="name">Mayank Mittal</div>
-                            <div className="email">mayank.pecfest@gmail.com</div>
-                            <div className="phone">8968264826</div>
-                            </div>
-                    </div>
+          <div className="col">
+            <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+              <div className="card_inner">
+                <div className="pad"></div>
+                <div className="card_content_top"></div>
+                <div className="card_content_bottom">
+                  <div className="name">Aseem Baveja</div>
+                  <div className="email">aseem@pecfest.in</div>
+                  <div className="phone">9988081481</div>
                 </div>
+              </div>
             </div>
-            <div className="col">
-                <div className="Team-card" style={{ backgroundImage: "url(/team/pallabh.jpg)"}}>
-                    <div className="card_inner">
-                        <div className="pad"></div>
-                        <div className="card_content_top"></div>
-                        <div className="card_content_bottom">
-                            <div className="name">Pallabh Singh</div>
-                            <div className="phone">7837442166</div>
-                            </div>
-                    </div>
+          </div>
+          <div className="col">
+            <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+              <div className="card_inner">
+                <div className="pad"></div>
+                <div className="card_content_top"></div>
+                <div className="card_content_bottom">
+                  <div className="name">Ananya Singh Chaudhary</div>
+                  <div className="email">asc2226@columbia.edu</div>
+                  <div className="phone">8558819215</div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+
         <div className="row heading">
-            <div className="col">
-                <div className="designation">Infrastructure</div>
-            </div>
+          <div className="col">
+            <div className="designation">Infrastructure</div>
+          </div>
         </div>
         <div className="row">
-            <div className="col">
-                <div className="Team-card" style={{ backgroundImage: "url(/team/Anreet_Singh_Bhamra.jpg)"}}>
-                    <div className="card_inner">
-                        <div className="pad"></div>
-                        <div className="card_content_top"></div>
-                        <div className="card_content_bottom">
-                            <div className="name">Anreet Singh Bhamra</div>
-                            <div className="email">anreet1996@gmail.com</div>
-                            <div className="phone">9501519521</div></div>
-                    </div>
+          <div className="col">
+            <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+              <div className="card_inner">
+                <div className="pad"></div>
+                <div className="card_content_top"></div>
+                <div className="card_content_bottom">
+                  <div className="name">Devansh Kandpal</div>
+                  <div className="email">devansh.kandpal@gmail.com</div>
+                  <div className="phone">9592029283</div>
                 </div>
+              </div>
             </div>
-            <div className="col">
-                <div className="Team-card" style={{ backgroundImage: "url(/team/Dipanshu_Agarwal.jpg)"}}>
-                    <div className="card_inner">
-                        <div className="pad"></div>
-                        <div className="card_content_top"></div>
-                        <div className="card_content_bottom">
-                            <div className="name">Dipanshu Agarwal</div>
-                            <div className="email">adipanshu@gmail.com</div>
-                            <div className="phone">7696115624</div></div>
-                    </div>
+          </div>
+          <div className="col">
+            <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+              <div className="card_inner">
+                <div className="pad"></div>
+                <div className="card_content_top"></div>
+                <div className="card_content_bottom">
+                  <div className="name">Shubhanshu Sharma</div>
+                  <div className="email">shubhanshu.pec@gmail.com</div>
+                  <div className="phone">9780994223</div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+
         <div className="row heading">
-            <div className="col">
-                <div className="designation">Event Coordination (Cultural)</div>
-            </div>
+          <div className="col">
+            <div className="designation">Event Coordination (Technical)</div>
+          </div>
         </div>
         <div className="row">
-                <div className="Team-card" style={{ backgroundImage: "url(/team/Aayush_Parasher.jpg)"}}>
-                    <div className="card_inner">
-                        <div className="pad"></div>
-                        <div className="card_content_top"></div>
-                        <div className="card_content_bottom">
-                            <div className="name">Aayush Parasher</div>
-                            <div className="email">aayushparashar95@gmail.com</div>
-                            <div className="phone">7837307607</div></div>
-                    </div>
-                </div>
-                <div className="Team-card" style={{ backgroundImage: "url(/team/parv.jpg)"}}>
-                    <div className="card_inner">
-                        <div className="pad"></div>
-                        <div className="card_content_top"></div>
-                        <div className="card_content_bottom">
-                            <div className="name">Parv Khurana</div>
-                            <div className="email">parv621@gmail.com</div>
-                            <div className="phone">9988720701</div></div>
-                    </div>
-                </div>
-        </div>
-     <div className="row heading">
-            <div className="col">
-                <div className="designation">Event Coordination (Technical)</div>
+          <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+            <div className="card_inner">
+              <div className="pad"></div>
+              <div className="card_content_top"></div>
+              <div className="card_content_bottom">
+                <div className="name">Vaibhav Dwivedi</div>
+              </div>
             </div>
+          </div>
+          <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+            <div className="card_inner">
+              <div className="pad"></div>
+              <div className="card_content_top"></div>
+              <div className="card_content_bottom">
+                <div className="name">Shyam Pandya</div>
+                <div className="email">shyampandya97@gmail.com</div>
+                <div className="phone">9592029037</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="row heading">
+          <div className="col">
+            <div className="designation">Event Coordination (Cultural)</div>
+          </div>
         </div>
         <div className="row">
-                <div className="Team-card" style={{ backgroundImage: "url(/team/japman.jpg)"}}>
-                    <div className="card_inner">
-                        <div className="pad"></div>
-                        <div className="card_content_top"></div>
-                        <div className="card_content_bottom">
-                            <div className="name">Japmanjeet Singh Gill</div>
-
-                            </div>
-                    </div>
-                </div>
-                <div className="Team-card" style={{ backgroundImage: "url(/team/Kanish_Bajaj.jpg)"}}>
-                    <div className="card_inner">
-                        <div className="pad"></div>
-                        <div className="card_content_top"></div>
-                        <div className="card_content_bottom">
-                            <div className="name">Kanish Bajaj</div>
-                            <div className="email">Kanish@ieee.org</div>
-                            <div className="phone">8872887200</div>
-                            </div>
-                    </div>
-                </div>
+          <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+            <div className="card_inner">
+              <div className="pad"></div>
+              <div className="card_content_top"></div>
+              <div className="card_content_bottom">
+                <div className="name">Shiman Vashisth</div>
+                <div className="email">shiman@pecfest.in</div>
+                <div className="phone">9915749135</div>
+              </div>
+            </div>
+          </div>
+          <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+            <div className="card_inner">
+              <div className="pad"></div>
+              <div className="card_content_top"></div>
+              <div className="card_content_bottom">
+                <div className="name">Raghav Arora</div>
+                <div className="email">raghavarora.beaero14@pec.edu.in</div>
+                <div className="phone">8968222377</div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="row heading">
-            <div className="col">
-                <div className="designation">Security and Discipline</div>
-            </div>
+          <div className="col">
+            <div className="designation">Security and Discipline</div>
+          </div>
         </div>
         <div className="row">
-            <div className="col">
-                <div className="Team-card" style={{ backgroundImage: "url(/team/Tejwinder_S_Chauhan.jpg)"}}>
-                    <div className="card_inner">
-                        <div className="pad"></div>
-                        <div className="card_content_top"></div>
-                        <div className="card_content_bottom">
-                            <div className="name">Tejwinder Singh</div>
-                            <div className="email">tejwindersingh137@gmail.com</div>
-                            <div className="phone">9646224771</div></div>
-                    </div>
+          <div className="col">
+            <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+              <div className="card_inner">
+                <div className="pad"></div>
+                <div className="card_content_top"></div>
+                <div className="card_content_bottom">
+                  <div className="name">Himanish Kumar</div>
+                  <div className="email">himanishkumar82@gmail.com</div>
+                  <div className="phone">9815560072</div>
                 </div>
+              </div>
             </div>
-            <div className="col">
-                <div className="Team-card" style={{ backgroundImage: "url(/team/Jasraj_Sandhu.jpg)"}}>
-                    <div className="card_inner">
-                        <div className="pad"></div>
-                        <div className="card_content_top"></div>
-                        <div className="card_content_bottom">
-                            <div className="name">Jasraj Singh Sandhu</div>
-                            <div className="email">jasrajsandhu1996@gmail.com</div>
-                            <div className="phone">7210000077</div></div>
-                    </div>
+          </div>
+          <div className="col">
+            <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+              <div className="card_inner">
+                <div className="pad"></div>
+                <div className="card_content_top"></div>
+                <div className="card_content_bottom">
+                  <div className="name">Gurjot Singh</div>
                 </div>
+              </div>
             </div>
-        </div>
-
-        <div className="row">
-            <div className="col">
-
-            </div>
-        </div>
-        <div className="row heading">
-            <div className="col">
-                <div className="designation">Finance</div>
-                <div className="Team-card" style={{ backgroundImage: "url(/team/Dil_Raaj_Singh_Mand.jpg)"}}>
-                    <div className="card_inner">
-                        <div className="pad"></div>
-                        <div className="card_content_top"></div>
-                        <div className="card_content_bottom">
-                            <div className="name">Dil Raj Singh Mand</div>
-                            </div>
-                    </div>
-                </div>
-            </div>
-            <div className="col">
-                <div className="designation">Printing, Publishing and Stationary</div>
-                    <div className="Team-card" style={{ backgroundImage: "url(/team/Pushkar_Bansal.jpg)"}}>
-                    <div className="card_inner">
-                        <div className="pad"></div>
-                        <div className="card_content_top"></div>
-                        <div className="card_content_bottom">
-                            <div className="name">Pushkar Bansal</div>
-                            <div className="email">printing@pecfest.in</div>
-                            <div className="phone">9915658241</div></div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
 
         <div className="row heading">
-            <div className="col">
-                <div className="designation">Publicity (Offline and Branding)</div>
-                <div className="Team-card" style={{ backgroundImage: "url(/team/Aneet_Saini.jpg)"}}>
-                    <div className="card_inner">
-                        <div className="pad"></div>
-                        <div className="card_content_top"></div>
-                        <div className="card_content_bottom">
-                            <div className="name">Aneeetinder Kaur Saini</div>
-                            </div>
-                    </div>
+          <div className="col">
+            <div className="designation">Alumni &amp; Industry Relations</div>
+            <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+              <div className="card_inner">
+                <div className="pad"></div>
+                <div className="card_content_top"></div>
+                <div className="card_content_bottom">
+                  <div className="name">Snigdha Singh</div>
+                  <div className="email">snigdha@pecfest.in</div>
+                  <div className="phone">8968675396</div>
                 </div>
+              </div>
             </div>
-            <div className="col">
-                <div className="designation">Alumni &amp; Industry Relations</div>
-                    <div className="Team-card" style={{ backgroundImage: "url(/team/Rupal_Verma.jpg)"}}>
-                    <div className="card_inner">
-                        <div className="pad"></div>
-                        <div className="card_content_top"></div>
-                        <div className="card_content_bottom">
-                            <div className="name">Rupal Verma</div>
-                            </div>
-                    </div>
-                    </div>
+          </div>
+          <div className="col">
+            <div className="designation">Printing, Publishing and Stationary</div>
+            <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+              <div className="card_inner">
+                <div className="pad"></div>
+                <div className="card_content_top"></div>
+                <div className="card_content_bottom">
+                  <div className="name">Gautam Sharma</div>
+                  <div className="email">printing@pecfest.in</div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
 
         <div className="row heading">
-            <div className="col">
-                <div className="designation">Creative</div>
-                <div className="Team-card" style={{ backgroundImage: "url(/team/Ashish.jpg)"}}>
-                    <div className="card_inner">
-                        <div className="pad"></div>
-                        <div className="card_content_top"></div>
-                        <div className="card_content_bottom">
-                            <div className="name">Ashish Puri</div>
-                            <div className="email">ashish96puri@gmail.com</div>
-                            <div className="phone">7589492304</div></div>
-                    </div>
+          <div className="col">
+            <div className="designation">Mega Shows</div>
+            <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+              <div className="card_inner">
+                <div className="pad"></div>
+                <div className="card_content_top"></div>
+                <div className="card_content_bottom">
+                  <div className="name">Ketan Sud</div>
+                  <div className="email">ketan@pecfest.in</div>
+                  <div className="phone">9876970913</div>
                 </div>
+              </div>
             </div>
-            <div className="col">
-                <div className="designation">Public Relations and Media</div>
-
-                <div className="Team-card" style={{ backgroundImage: "url(/team/Aarushi_Gupta.jpg)"}}>
-                    <div className="card_inner">
-                        <div className="pad"></div>
-                        <div className="card_content_top"></div>
-                        <div className="card_content_bottom">
-                            <div className="name">Aarushi</div>
-                            <div className="email">aarushi.pec18@gmail.com</div>
-                            <div className="phone">9888128463</div>
-                            </div>
-                    </div>
+          </div>
+          <div className="col">
+            <div className="designation">Finance</div>
+            <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+              <div className="card_inner">
+                <div className="pad"></div>
+                <div className="card_content_top"></div>
+                <div className="card_content_bottom">
+                  <div className="name">Gobind Dhamija</div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
 
         <div className="row heading">
-            <div className="col">
-                <div className="designation">Hospitality &amp; Logistics</div>
-                <div className="Team-card" style={{ backgroundImage: "url(/team/Hansin_Garg.jpg)"}}>
-                    <div className="card_inner">
-                        <div className="pad"></div>
-                        <div className="card_content_top"></div>
-                        <div className="card_content_bottom">
-                            <div className="name">Hansin Garg</div>
-                            <div className="email">hansingarg81@yahoo.com</div>
-                            <div className="phone">8558888850</div></div>
-                    </div>
+          <div className="col">
+            <div className="designation">Logistics</div>
+            <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+              <div className="card_inner">
+                <div className="pad"></div>
+                <div className="card_content_top"></div>
+                <div className="card_content_bottom">
+                  <div className="name">Aakanksha</div>
+                  <div className="email">aakanksha.kh.pec@gmail.com</div>
+                  <div className="phone">9501033030</div>
                 </div>
+              </div>
             </div>
-            <div className="col">
-                <div className="designation">Mega Shows</div>
-                <div className="Team-card" style={{ backgroundImage: "url(/team/placeholder.jpg)"}}>
-                    <div className="card_inner">
-                        <div className="pad"></div>
-                        <div className="card_content_top"></div>
-                        <div className="card_content_bottom">
-                            <div className="name">Vikramaditya Singh</div>
-                            <div className="email">Vikramaditya9116@gmail.com</div>
-                            <div className="phone">8527165044</div>
-                            </div>
-                    </div>
+          </div>
+          <div className="col">
+            <div className="designation">Hospitality</div>
+            <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+              <div className="card_inner">
+                <div className="pad"></div>
+                <div className="card_content_top"></div>
+                <div className="card_content_bottom">
+                  <div className="name">Pratik Sinha</div>
+                  <div className="email">pratikpecfest@gmail.com</div>
+                  <div className="phone">8528858461</div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+
         <div className="row heading">
-            <div className="col">
-                <div className="designation">Online Publicity and Website Management</div>
-                <div className="Team-card" style={{ backgroundImage: "url(/team/Mitesh_Kakkar.jpg)"}}>
-                    <div className="card_inner">
-                        <div className="pad"></div>
-                        <div className="card_content_top"></div>
-                        <div className="card_content_bottom">
-                            <div className="name">Mitesh Kakkar</div>
-                            <div className="email">miteshkakkar8@gmail.com</div>
-                            <div className="phone">8054962709</div>
-                            </div>
-                    </div>
+          <div className="col">
+            <div className="designation">Public Relations and Media</div>
+            <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+              <div className="card_inner">
+                <div className="pad"></div>
+                <div className="card_content_top"></div>
+                <div className="card_content_bottom">
+                  <div className="name">Sanpreet</div>
                 </div>
+              </div>
             </div>
+          </div>
+          <div className="col">
+            <div className="designation">Publicity (Offline and Branding)</div>
+            <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+              <div className="card_inner">
+                <div className="pad"></div>
+                <div className="card_content_top"></div>
+                <div className="card_content_bottom">
+                  <div className="name">Vaibhav Sharma</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-    </div>
+        <div className="row heading">
+          <div className="col">
+            <div className="designation">Creative</div>
+            <div className="Team-card" style={{backgroundImage: "url(/team/placeholder.jpg)"}}>
+              <div className="card_inner">
+                <div className="pad"></div>
+                <div className="card_content_top"></div>
+                <div className="card_content_bottom">
+                  <div className="name">Mayank Kaura</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-
-
-        )
-    }
+      </div>
+    )
+  }
 }

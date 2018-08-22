@@ -1,81 +1,57 @@
-import React, { Component } from 'react';
-import SignUpForm from './SignUpForm';
-import LoginForm from './LoginForm';
-import { withRouter } from 'react-router-dom';
-
-import user from './user';
-
+import React, {Component} from 'react';
 import './SignUpOrLoginForm.css';
+import { withRouter } from 'react-router-dom'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import {Motion, spring} from 'react-motion';
+import NavigationPanel from './components/NavigationPanel';
+import Modal from './components/Modal';
 
-class SignUpOrLoginForm extends Component {
-  state = {
-    form: 'signup',
-  }
 
-  handleClick = (form) => {
-    this.setState({ form });
-  }
+class SignUpORLoginForm extends Component {
 
-  componentDidMount() {
-    this.overflow = document.body.style.overflow;
-    document.body.style.overflow = 'auto'
-  }
+	constructor(props) {
+		super(props);
+		this.state = {
+			mounted: false
+		};
+	}
 
-  componentWillUnmount() {
-    document.body.style.overflow = this.overflow;
-  }
+	componentDidMount() {
+		this.setState({ mounted: true });
+	}
 
-  handleCancel = () => {
+	handleSubmit = (e) => {
+		this.setState({ mounted: false });
+		e.preventDefault();
+	}
 
-    let continueUrl = '/';
-    let search = this.props.location.search.slice('?continue='.length);
-    if (search.length > 0) {
-      continueUrl = search;
-    }
-    this.props.history.push(continueUrl);
-  }
 
-  handleLogin = (pecfestId) => {
-    this.setState({ loggedIn: true, pecfestId: pecfestId })
-    setTimeout(this.handleCancel, 1000);
-  }
+	render() {
+		const {mounted} = this.state;
 
-  handleSignup = (pecfestId) => {
-    this.setState({ loggedIn: true, pecfestId: pecfestId })
-    user.login(pecfestId, {
-      onSuccess: this.handleCancel,
-      onFailed: this.handleCancel,
-    })
-  }
+		let child;
+		let test = 12;
 
-  render() {
-    return (
-      <div className="SignUpOrLoginForm">
-        <div className="SignUpOrLoginForm-options">
-          <button className={"SignUpButton" + (this.state.form == 'signup' ? ' highlight' : '')}
-            onClick={this.handleClick.bind(this, 'signup')}>Sign Up</button>
-          <span className="light">&nbsp;or&nbsp;</span>
-          <button className={"SignUpButton" + (this.state.form == 'login' ? ' highlight' : '')}
-            onClick={this.handleClick.bind(this, 'login')}>Login</button>
-          <span className="light">&nbsp;or&nbsp;</span>
-          <button className={"SignUpButton"}
-            onClick={window.location.pathname.startsWith('/register') ? this.handleCancel : this.props.onCancel}>Cancel</button>
-        </div>
-        <div className="Divider" />
-        {
-          this.state.loggedIn ? <h1 style={{ }}>You are logged in as <strong>{this.state.pecfestId}</strong></h1> :
-            <div className="SignUpOrLoginForm-form">
-            {
-              this.state.form == 'signup' ?
-                  <SignUpForm onSignUp={this.handleSignup} onContinueToLogin={this.handleClick.bind(this, 'login')} /> :
-                  <LoginForm onLogin={this.handleLogin} />
-            }
-            </div>
-        }
-      </div>
-    )
-  }
+		if(mounted) {
+			child = (
+				<div className="App_test">
+          <NavigationPanel></NavigationPanel>
+					<Modal onSubmit={this.handleSubmit}/>
+				</div>
+			);
+		}
+
+		return(
+			<div className="App">
+				<ReactCSSTransitionGroup
+					transitionName="example"
+					transitionEnterTimeout={500}
+					transitionLeaveTimeout={300}>
+						{child}
+				</ReactCSSTransitionGroup>
+			</div>
+		);
+	}
 }
 
-
-export default withRouter(SignUpOrLoginForm)
+export default withRouter (SignUpORLoginForm);

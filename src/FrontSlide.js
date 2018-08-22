@@ -126,16 +126,19 @@ export default class FrontSlide extends Component {
 				this.props.loading ?
 					<div className="FrontSlide" /> :
 					<div className="FrontSlide" ref="frontSlide">
+            <div className="logoClass"></div>
+						<div style={{height:'100px'}}></div>
 						<div>
-							<Title value="PECFEST'17" />
+							<Title value="PECFEST'18" />
 						</div>
 						<div className="FrontSlide-extrainfo fadeLate">
 							<div className="FrontSlide-Dates animated">
-								<small style={{color: 'white', fontWeight: '700', display: 'block', marginBottom: '2em'}}><span style={{color: 'white'}}>27</span>th October - <span style={{color: 'white'}}>29</span>th October</small>
+								<small style={{color: 'white', fontWeight: '700', display: 'block', marginBottom: '2em'}}><span style={{color: 'white'}}>26</span>th October - <span style={{color: 'white'}}>28</span>th October</small>
 							</div>
 							<div className="divider animated">
 								<Divider style={{ margin: 'auto', display: 'block' }} />
 							</div>
+							<div style={{height:'180px'}}></div>
 							<div className="FrontSlide-register animated">
 							{
 								!user.isLoggedIn() ?
@@ -144,6 +147,7 @@ export default class FrontSlide extends Component {
 							}
 							</div>
 							<SocialNetworkingLinks />
+              <div style={{height:'100px'}}></div>
 						</div>
 					</div>
 			}

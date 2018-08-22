@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import NavigationDialog from './NavigationDialog';
 import { withRouter } from 'react-router-dom';
-import Navbar from './Navbar';
+//import Navbar from './Navbar';
+import Nav from './Nav';
 
 import './NavigationButton.css';
 
@@ -22,15 +23,15 @@ class NavigationButton extends Component {
 		const { history } = this.props;
 
 		this.unsubscribe = history.listen(this.handleLocationChange);
-		this.handleLocationChange(history.location);
+		this.handleLocationChange();
 	}
 
 	componentWillUnmount() {
 		if (this.unsubscribe) this.unsubscribe();
 	}
 
-	handleLocationChange = location => {
-		if (location.pathname === '/' && !window.checkIfMobile()) {
+	handleLocationChange = () => {
+		if (!window.checkIfMobile()) {
 			this.setState({ compact: false })
 		} else {
 			this.setState({ compact: true })
@@ -51,7 +52,7 @@ class NavigationButton extends Component {
 								this.state.navigation ? <NavigationDialog onTransition={()=>{}} onClose={this.handleClose} /> : ""
 							}
 						</div> :
-						<Navbar />
+						<Nav />
 				}
 			</div>
 		)

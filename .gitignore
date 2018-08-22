@@ -8,8 +8,14 @@
 
 # production
 /build
+/.idea/*
+/scripts
+/extras
+/config
+
 
 # misc
+.gitignore
 .DS_Store
 .env.local
 .env.development.local
@@ -19,3 +25,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.idea/
+.gitignore
