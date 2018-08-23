@@ -9,7 +9,7 @@ import Loader from './Loader';
 import playstore from './images/playstore.svg'
 
 import './FrontSlide.css';
-
+import './reg_button.css';
 class Title extends Component {
 	render() {
 		const letters = this.props.value.split('').map((letter, i) => {
@@ -140,11 +140,20 @@ export default class FrontSlide extends Component {
 							</div>
 							<div style={{height:'180px'}}></div>
 							<div className="FrontSlide-register animated">
-							{
-								!user.isLoggedIn() ?
-									<Link className="btn-2" to="/register">Register</Link>
-									: <UserInfo onLogout={this.handleLogout} />
-							}
+                                {
+                                    !user.isLoggedIn() ?
+                                        <Link className="box bar" to="/register">Register</Link>
+                                        : <UserInfo onLogout={this.handleLogout}/>
+
+                                }
+                            </div>
+							<div className="FrontSlide-register animated">
+                            <div style={{float: 'left'}} >
+                                <Link className="box bar" to="/register">Brochure</Link>
+                            </div>
+                            <div style={{float: 'right'}}>
+                                <Link className="box bar" to="/register">Campus Ambassador</Link>
+                            </div>
 							</div>
 							<SocialNetworkingLinks />
               <div style={{height:'100px'}}></div>

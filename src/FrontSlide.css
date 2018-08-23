@@ -105,7 +105,7 @@ h1.Title {
 }
 
 .divider {
-	display: 'block';
+	display: block;
 	margin: auto;
 	max-width: 30em;
 }
