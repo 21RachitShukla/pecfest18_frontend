@@ -143,7 +143,7 @@ class Dashboard extends Component {
           ontouchstart={this.displayRegisteredEvents}>
             <a href="#">Registered Events</a>
           </li>
-          <br/>
+          
           <li className="button_internal notif" onClick={this.displayNotifications}
           ontouchstart={this.displayNotifications}>
             <a href="#">Notifications</a>
