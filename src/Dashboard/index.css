@@ -135,3 +135,7 @@ th
 .headings{
 	text-align: center;
 }
+
+img{
+	border-radius: 90%;
+}

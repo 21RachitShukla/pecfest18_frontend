@@ -180,7 +180,7 @@ class Dashboard extends Component {
           </div>
         
           <div className="result">{result}</div>
-
+          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         </div>
     </div>
 
