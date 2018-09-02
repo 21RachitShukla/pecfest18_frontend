@@ -13,6 +13,8 @@
     --background_color: #ffffff;
     */
 }
+
+
 .flex-container
 {
 	/*padding-top: .1em;*/
@@ -25,6 +27,7 @@
 	flex: 70%;
 	color: var(--main_color);
 	background-color: var(--background_color);
+	/*height: 1620px;*/
 }
 
 .flex_right
@@ -32,9 +35,10 @@
 	flex : 30%;
 	color: var(--text_color);
 	background-color: var(--main_color);
-	height:1620px;
-	padding-top: 0.3em;
-	padding-left: 0.3em;
+	/*height:1000px;*/
+	padding-top: 3em;
+	/*padding-left: 0.3em;*/
+	text-align: center;
 }
 
 .buttons
@@ -45,13 +49,36 @@
 	color: var(--text_color);
 }
 
-.button_internal
-{
-	/*border-style: dotted;
-	padding: 0.3em;
-	border-color : white;
-	border-width: 0.1em;*/
+.buttons_list{
+	display: block;	
+	font-size: 1.4rem;
+	/*padding : 12px 14px;*/
+	/*background: #32333B;*/
+	margin-bottom: 1px;
+	/*border-left: 5px solid #fff;*/
+    /*border-left-color: rgb(255, 255, 255);*/
+
 }
+
+
+/*.button_internal
+{
+	height: 40px;
+	border-style: solid;
+	border-width: 0px 0px 0px 3px;
+	border-color: white;
+	margin:0;
+	background-color: white;
+	padding:0;
+	text-align: center;
+}*/
+
+/*.button_internal:hover
+{
+	border-style: solid;
+	border-width: 0px 0px 0px 3px;
+	border-color: white;
+}*/
 
 table
 {
@@ -75,14 +102,12 @@ th
 
 .registration_table
 {
-	overflow-x: scroll;
-	overflow-y: auto;
+	overflow: scroll;
 }
 
 .notification_table
 {
-	overflow-x: scroll;
-	overflow-y: auto;
+	/*overflow: scroll;*/
 }
 
 @media screen and (max-width: 700px) {
@@ -103,4 +128,8 @@ th
 	{
 		display: none;
 	}
+}
+
+.headings{
+	text-align: center;
 }

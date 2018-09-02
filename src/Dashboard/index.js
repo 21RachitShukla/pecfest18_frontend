@@ -73,17 +73,13 @@ class Dashboard extends Component {
 
     if (registeredEvents) {
       result = <div id="reg" className="registration_table">
-        <table>
-          <tr>
-            <th>Event</th>
-            <th>Date</th>
-            <th>Venue</th>
-            <th>Time</th>
-          </tr>
+      <h1 className="headings">Registered Events</h1>
+        {/* Api ke saath aisa chalega
           {
             events.map((event, i) => (
               <EventRegistrations
                 key={i}
+                _key={i}
                 event={event.name}
                 date={event.date}
                 venue={event.venue}
@@ -92,15 +88,25 @@ class Dashboard extends Component {
               />
             ))
           }
-        </table>
-      </div>
+        */}
+
+        {/*Abhi testing ke liye ye h */}
+        <EventRegistrations _key={0}/>
+        <EventRegistrations _key={1}/>
+        <EventRegistrations _key={2}/>
+        <EventRegistrations _key={3}/>
+        <EventRegistrations _key={4}/>
+        <EventRegistrations _key={5}/>
+        <EventRegistrations _key={6}/>        
+    </div>
     }
     else {
       result = <div id="notif" className="notification_table">
+        <h1>Notifications</h1>
         <table>
         <tr>
           <th>Event</th>
-          <th>Title Title Title Title Title Title Title Title Title Title Title Title Title TitleTitle Title Title Title Title Title Title Title Title Title Title Title Title Title </th> {/*for checking scroll property of table*/}
+          <th>Title</th>
           <th>Details</th>
         </tr>
           {
@@ -120,24 +126,6 @@ class Dashboard extends Component {
     return (
       <div id="main-div" className="flex-container">
         
-        <div className="flex_left">
-
-          {/*buttons*/}
-          <div id="buttons-id" className="buttons">
-            <div className="button_internal" onClick={this.displayRegisteredEvents}
-                 ontouchstart={this.displayRegisteredEvents}><a href="#"><h2>Registered Events</h2></a>
-            </div>
-            <div className="button_internal" onClick={this.displayNotifications}
-                 ontouchstart={this.displayNotifications}><a href="#"><h2>Notifications</h2></a>
-            </div>
-          </div>
-        
-          {/*Result*/}
-          {result}
-
-        </div>
-
-
         <div className="flex_right">
           <div>
             {/*<h1>PECFEST 2018</h1>*/}
@@ -149,6 +137,19 @@ class Dashboard extends Component {
             <hr style={{borderTop: '3px solid'}}/>
             <p>Participant, Pecfest 2018</p>
             
+          <br/><br/>
+          <ul className="buttons_list">
+          <li className="button_internal reg" onClick={this.displayRegisteredEvents}
+          ontouchstart={this.displayRegisteredEvents}>
+            <a href="#">Registered Events</a>
+          </li>
+          <br/>
+          <li className="button_internal notif" onClick={this.displayNotifications}
+          ontouchstart={this.displayNotifications}>
+            <a href="#">Notifications</a>
+          </li>
+          </ul>
+
             {/*<div className="grid-container-card">
                               <div className="grid-item">
                                   <div className="card">
@@ -170,7 +171,20 @@ class Dashboard extends Component {
               </div>*/}
           </div>
         </div>
-      </div>
+
+
+        <div className="flex_left">
+
+          {/*buttons*/}
+          <div id="buttons-id" className="buttons">
+          </div>
+        
+          <div className="result">{result}</div>
+
+        </div>
+    </div>
+
+
     );
   }
 }
