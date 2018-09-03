@@ -108,7 +108,7 @@
 .sponsors_App-main-header {
   padding: 1em;
   text-align:left;
-  background-color: #196070;
+  background-color: gold;
 }
 
 .App-main-header {
@@ -119,13 +119,12 @@
 .sponsors_App-main-header > h1 {
   padding: 0;
   margin: 0;
-  color: #e6ffe0;
+  color: black;
 }
 
 .sponsors_App-indi-headers{
-  background-color: #e6ffe0;
-  color:#196070;
-  font-size: 20px;
+  color:white;
+  font-size: 2rem;
   text-align: center;
 }
 

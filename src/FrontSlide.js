@@ -9,6 +9,7 @@ import Loader from './Loader';
 import playstore from './images/playstore.svg'
 
 import './FrontSlide.css';
+import './reg_button.css';
 
 class Title extends Component {
 	render() {
@@ -138,14 +139,22 @@ export default class FrontSlide extends Component {
 							<div className="divider animated">
 								<Divider style={{ margin: 'auto', display: 'block' }} />
 							</div>
-							<div style={{height:'180px'}}></div>
+							<div style={{height:'180px', color: 'white', fontSize: '3rem', textAlign: 'bottom'}}>City of Stars</div>
 							<div className="FrontSlide-register animated">
 							{
 								!user.isLoggedIn() ?
-									<Link className="btn-2" to="/register">Register</Link>
+									<Link className="box bar" to="/register">Register</Link>
 									: <UserInfo onLogout={this.handleLogout} />
 							}
 							</div>
+                            <div className="FrontSlide-register animated">
+                                <div style={{float: 'left'}} >
+                                    <Link className="box bar" to="/register">Brochure</Link>
+                                </div>
+                                <div style={{float: 'right'}}>
+                                    <a className="box bar" href="https://goo.gl/forms/9jt3kDMFP1nPHrj42">Campus Ambassador</a>
+                                </div>
+                            </div>
 							<SocialNetworkingLinks />
               <div style={{height:'100px'}}></div>
 						</div>

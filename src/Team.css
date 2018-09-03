@@ -25,7 +25,7 @@
 .card_inner {
     height: 100%;
     position: relative;
-    color: white;
+    color: black;
 }
 
 .name {
@@ -39,7 +39,7 @@
 }
 
 .designation {
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
     margin-top: auto;
     margin-bottom: 0px;
@@ -52,7 +52,7 @@
     width: 100%;
     box-sizing: border-box;
     padding: 0.5rem;
-    background-color: #196070;
+    background-color: gold;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
 }
@@ -63,7 +63,7 @@
 }
 
 .email a {
-    color: white;
+    color: black;
 }
 
 .phone {
@@ -72,11 +72,7 @@
 }
 
 .phone a {
-    color: white;
-    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3),
-    1px -1px 0 rgba(0, 0, 0, 0.3),
-    -1px 1px 0 rgba(0, 0, 0, 0.3),
-    1px 1px 0 rgba(0, 0, 0, 0.3);
+    color: black;
 }
 
 .phone a:hover {
@@ -88,7 +84,7 @@
 }
 
 .heading {
-    color: #6C6C6C;
+    color: white;
     width: 100%;
     box-sizing: border-box;
     margin-top: 50px;
@@ -109,11 +105,10 @@
 
 .Team-header {
     padding: 1em;
-    background-color: #196070;
-    color: #e6ffe0;
+    background-color: gold;
 }
 
 .Team-header > h1 {
     margin: 0;
-    color: #e6ffe0;
+    color: black;
 }

@@ -34,14 +34,15 @@ export default class PECFEST extends Component {
     return (
       <BrowserRouter>
         <div className="PECFEST-root">
+          <div className="bgDiv"></div>
           <div className="content">
             <Route path="/" exact component={IntroSlides}/>
-            <Route path="/activities" exact component={Activities}/>
-            <Route
-              path="/activities/:activityId/events"
-              exact
-              component={Events}
-            />
+            {/*<Route path="/activities" exact component={Activities}/>*/}
+            {/*<Route*/}
+              {/*path="/activities/:activityId/events"*/}
+              {/*exact*/}
+              {/*component={Events}*/}
+            {/*/>*/}
             {/*<Route path="/events/:eventId" exact component={Event}/>*/}
             <Route path="/pecfest2017" exact component={PecFest2016}/>
             {/*<Route path="/hospitality" exact component={Hospi}/>*/}
