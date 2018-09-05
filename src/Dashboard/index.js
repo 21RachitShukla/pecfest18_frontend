@@ -97,7 +97,11 @@ class Dashboard extends Component {
         <EventRegistrations _key={3}/>
         <EventRegistrations _key={4}/>
         <EventRegistrations _key={5}/>
-        <EventRegistrations _key={6}/>        
+        <EventRegistrations _key={6}/>
+        <EventRegistrations _key={7}/>
+        <EventRegistrations _key={8}/>
+        <EventRegistrations _key={9}/>
+        <EventRegistrations _key={10}/>       
     </div>
     }
     else {
@@ -180,7 +184,7 @@ class Dashboard extends Component {
           </div>
         
           <div className="result">{result}</div>
-          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
         </div>
     </div>
 
