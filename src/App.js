@@ -56,7 +56,7 @@ class App extends Component {
           }}>
             {
 
-              this.state.error ? <ErrorMessage message="Unable to load assets. Please check your internet connection." /> :
+              // this.state.error ? <ErrorMessage message="Unable to load assets. Please check your internet connection." /> :
               (this.state.loading ?
                 !this.state.starting && <Progress working={!this.state.progress} onComplete={this.props.onComplete} /> : "")
             }
