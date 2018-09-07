@@ -18,6 +18,7 @@ import DevelopersPage from './DevelopersPage';
 import Profile from './Profile';
 import Dashboard from './Dashboard';
 import ComingSoon from './ComingSoon';
+import Brochure from './Brochure';
 
 import './PECFEST.css';
 
@@ -58,6 +59,7 @@ export default class PECFEST extends Component {
             {/*<Route path="/social" exact component={() => <ComingSoon/>}/>*/}
             <Route path="/activities" exact component={() => <ComingSoon/>}/>
             <Route path="/register" exact component={() => <ComingSoon/>}/>
+            <Route path="/brochure" exact component={() => <Brochure/>}/>
           </div>
           <NavigationButton/>
           {/*<FeedbackDialogBox/>*/}

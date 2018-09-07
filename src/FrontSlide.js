@@ -149,7 +149,7 @@ export default class FrontSlide extends Component {
 							</div>
                             <div className="animated row">
                                 <div className="col FrontSlide-buttons">
-                                    <a className="box bar" href="https://drive.google.com/file/d/1GfJ4MLX99-gWUl6T48mbjx1urW9AZigV/view?usp=drivesdk">Brochure</a>
+                                    <Link className="box bar" to="/brochure">Brochure</Link>
                                 </div>
                                 <div className="col FrontSlide-buttons">
                                     <a className="box bar" href="https://goo.gl/forms/9jt3kDMFP1nPHrj42">Campus Ambassador</a>
