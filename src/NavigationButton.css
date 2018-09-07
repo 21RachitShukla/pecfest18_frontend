@@ -3,7 +3,7 @@
 	top: 0;
 	right: 0;
 	margin: 1em;
-	background-color: black;
+	background-color: gold;
 	color: white;
 	z-index: 9999;
 	border: none;
@@ -12,7 +12,7 @@
 
 .Button {
 	text-decoration: none;
-	background-color: #E6ffE0;
+	background-color: gold;
 	padding: 1em;
 	border: 1px solid;
 	color: black;
@@ -20,6 +20,6 @@
 }
 
 .Button:hover {
-	background-color: #f6FFf0;
+	background-color: gold;
 	color: black;
 }

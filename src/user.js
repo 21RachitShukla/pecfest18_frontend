@@ -1,4 +1,4 @@
-import { api } from './eventdb';
+import {api} from './eventdb';
 
 window._user = {
   currentUser: {
@@ -68,27 +68,46 @@ window._user = {
       return setTimeout(() => config.onSuccess(this.currentUser));
     }
     if (this.loggedIn) {
-      this.login(this.currentUser.pecfestId, {onSuccess: () => {
-        config.onSuccess(this.currentUser);
-        this.haveDetails = true;
-      }, onFailed: config.onFailed });
+      this.getUserDetails(this.currentUser.pecfestId, {
+        onSuccess: () => {
+          config.onSuccess(this.currentUser);
+          this.haveDetails = true;
+        }, onFailed: config.onFailed
+      });
 
     } else {
-      setTimeout(() => config.onFailed({ message: 'Could not login the user.'}));
+      setTimeout(() => config.onFailed({message: 'Could not login the user.'}));
     }
+  },
+
+  getUserDetails(data, config) {
+    fetch(api.url + 'user/' + data)
+      .then(data => data.json())
+      .then(user => {
+        if (user.ACK !== 'SUCCESS') {
+          config.onFailed(user);
+          return;
+        }
+        config.onSuccess(user.pecfestId);
+      })
+      .catch(err => {
+        console.log(err);
+        console.log("This should not happen in log in");
+        config.onFailed(err);
+      })
   },
 
   login(data, config) {
     fetch(api.url + 'user/signIn', {
-        method: 'post',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-      .then(data => data.json())
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(data),
+    }).then(data => data.json())
       .then(user => {
-        if (user.ACK !== "SUCCESS") {
+        if (user.ACK !== 'SUCCESS') {
           config.onFailed(user);
           return;
         }
@@ -97,7 +116,7 @@ window._user = {
         config.onSuccess(user.pecfestId);
       })
       .catch(err => {
-          console.log(err);
+        console.log(err);
         console.log("This should not happen in log in");
         config.onFailed(err);
       })
@@ -114,11 +133,11 @@ window._user = {
       .then(data => data.json())
       .then(res => {
         if (res.ACK !== 'SUCCESS') {
-            setTimeout(1000);
-            config.onFailed(res);
-            return;
-        }
           setTimeout(1000);
+          config.onFailed(res);
+          return;
+        }
+        setTimeout(1000);
         config.onSuccess(res);
       })
       .catch(err => {
@@ -132,14 +151,14 @@ window._user = {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
-          'Accept' : 'application/json',
+        'Accept': 'application/json',
       },
-      body: JSON.stringify({ otp, mobile }),
+      body: JSON.stringify({otp, mobile}),
     })
       .then(data => data.json())
       .then(res => {
-          console.log(res);
-          setTimeout(1000);
+        console.log(res);
+        setTimeout(1000);
         if (res.ACK !== 'SUCCESS') {
           config.onFailed(res);
           return;
@@ -157,11 +176,11 @@ window._user = {
 
   checkVerified(mobile, config) {
     fetch(api.url + 'user/isVerified', {
-        method: 'post',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ mobile }),
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({mobile}),
     })
       .then(data => data.json())
       .then(json => {
@@ -177,7 +196,7 @@ window._user = {
 
   sendIDToEmail(email, config) {
     fetch(api.url + 'user/forgot_pecfestid', {
-      body: JSON.stringify({ email }),
+      body: JSON.stringify({email}),
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -199,7 +218,7 @@ window._user = {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email, accomodation: accomo, pecfestId: this.currentUser.pecfestId })
+      body: JSON.stringify({email, accomodation: accomo, pecfestId: this.currentUser.pecfestId})
     }).then(data => data.json())
       .then(res => {
         if (res.ACK != 'FAILED') {
@@ -217,7 +236,7 @@ window._user = {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ eventId: event.id, team: users, leader })
+      body: JSON.stringify({eventId: event.id, team: users, leader})
     })
       .then(data => data.json())
       .then(res => {
@@ -227,8 +246,32 @@ window._user = {
           config.onFailed(res)
         }
       }).catch(res => {
-        config.onFailed(res);
+      config.onFailed(res);
+    })
+  },
+
+  getRegisteredEvents(config) {
+    fetch(api.url + 'user/registeredEvents?id=ADITCYP5ID')
+      .then(data => data.json())
+      .then(events => {
+        config.onSuccess(events);
       })
+      .catch(err => {
+        console.log("This should not happened. If you are dev, then please report this immediately");
+        config.onFailed(err);
+      });
+  },
+
+  getNotifications(config) {
+    fetch(api.url + 'user/notifications?id=ADITCYP5ID')
+      .then(data => data.json())
+      .then(notifs => {
+        config.onSuccess(notifs);
+      })
+      .catch(err => {
+        console.log("This should not happened. If you are dev, then please report this immediately");
+        config.onFailed(err);
+      });
   },
 
   isRegistered(eventId) {

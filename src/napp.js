@@ -72,6 +72,7 @@ class Sponsors extends Component{
 		const final_arr = img_concat.map((imag,i) => {
 			return (
 					<div id="holder-div" key={i}>
+						<br/>
 						<div className="sponsors_App-indi-headers">
 						{window.type_of_spons[window.j++]}
 						</div>

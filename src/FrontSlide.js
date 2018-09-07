@@ -9,6 +9,7 @@ import Loader from './Loader';
 import playstore from './images/playstore.svg'
 
 import './FrontSlide.css';
+import './reg_button.css';
 
 class Title extends Component {
 	render() {
@@ -126,24 +127,36 @@ export default class FrontSlide extends Component {
 				this.props.loading ?
 					<div className="FrontSlide" /> :
 					<div className="FrontSlide" ref="frontSlide">
+            <div className="logoClass"></div>
+						<div style={{height:'100px'}}></div>
 						<div>
-							<Title value="PECFEST'17" />
+							<Title value="PECFEST'18" />
 						</div>
 						<div className="FrontSlide-extrainfo fadeLate">
 							<div className="FrontSlide-Dates animated">
-								<small style={{color: 'white', fontWeight: '700', display: 'block', marginBottom: '2em'}}><span style={{color: 'white'}}>27</span>th October - <span style={{color: 'white'}}>29</span>th October</small>
+								<small style={{color: 'white', fontWeight: '700', display: 'block', marginBottom: '2em'}}><span style={{color: 'white'}}>26</span>th October - <span style={{color: 'white'}}>28</span>th October</small>
 							</div>
 							<div className="divider animated">
 								<Divider style={{ margin: 'auto', display: 'block' }} />
 							</div>
+							<div style={{height:'180px', color: 'white', fontSize: '3rem', textAlign: 'bottom'}}>City of Stars</div>
 							<div className="FrontSlide-register animated">
 							{
 								!user.isLoggedIn() ?
-									<Link className="btn-2" to="/register">Register</Link>
+									<Link className="box bar" to="/register">Register</Link>
 									: <UserInfo onLogout={this.handleLogout} />
 							}
 							</div>
+                            <div className="animated row">
+                                <div className="col FrontSlide-buttons">
+                                    <a className="box bar" href="https://drive.google.com/file/d/1GfJ4MLX99-gWUl6T48mbjx1urW9AZigV/view?usp=drivesdk">Brochure</a>
+                                </div>
+                                <div className="col FrontSlide-buttons">
+                                    <a className="box bar" href="https://goo.gl/forms/9jt3kDMFP1nPHrj42">Campus Ambassador</a>
+                                </div>
+                            </div>
 							<SocialNetworkingLinks />
+              <div style={{height:'100px'}}></div>
 						</div>
 					</div>
 			}

@@ -9,3 +9,14 @@ a {
 	font-style: none;
 	text-decoration: none;
 }
+
+.bgDiv {
+	background-image: url("./second_bg.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+}

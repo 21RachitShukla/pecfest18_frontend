@@ -9,7 +9,6 @@ import assoc8 from './images/mercedes.png';
 import assoc9 from './images/Pokermet.png';
 import assoc10 from './images/SBI.jpg';
 import assoc11 from './images/strands.jpg';
-import assoc12 from './images/imin.PNG';
 import assoc13 from './images/mtv.PNG';
 import assoc14 from './images/MTV Beats.jpg';
 import assoc15 from './images/Comedy Central.PNG';
@@ -19,8 +18,6 @@ import fmpartner1 from './images/fmpartner.jpg';
 import youthpartner1 from './images/pupulse_youth.jpg';
 import photopartner1 from './images/Hawkeyed_phot.jpg';
 import t_sponsor1 from './images/honda.jpg';
-import pow_by1 from './images/oyo2.jpg';
-import co_spons_by from './images/tedge.jpg';
 import cycling_partners from './images/hero.jpg';
 import diary_partner1 from './images/verka.jpg';
 import technology_partners1 from './images/zap.png';
@@ -33,12 +30,18 @@ import food4 from './images/naman.jpeg';
 import food5 from './images/GNL.jpeg';
 import food6 from './images/Major Changs.png';
 import food7 from './images/Prachi.jpg';
-import food8 from './images/waiwai.jpg';
 import food9 from './images/taste battles.jpg';
 import safety_partner1 from './images/manforce.jpg';
 import coding_prtnr1 from './images/Coding_Ninjas.png';
 import mag_partner1 from './images/Chandigarh X.jpg';
 import tyre_partner1 from './images/Ralco.jpg';
+import ca1 from './images/Careerguide.jpg';
+import ca2 from './images/eatmynews.png';
+import ca3 from './images/Emitap Entertainments.jpg';
+import ca4 from './images/InsideIIM.png';
+import ca5 from './images/Intern Theory.jpg';
+import ca6 from './images/todaysera.png';
+import ca7 from './images/Jux Pux Logo.png';
 
 /*Keep the id of a particular type of sponsor to be the same throughout.*/
 
@@ -51,25 +54,9 @@ export default [
 		type: 'Title Sponsor',
 		link : ''
 	},
-	{
-		id : 1,
-		name : 'OYO',
-		image : pow_by1,
-		color : '',
-		type: 'Powered By',
-		link : ''
-	},
-	{
-		id : 2,
-		name : 'Talent edge',
-		image : co_spons_by,
-		color : '',
-		type: 'Co Sponsored By (Career Partner)',
-		link : ''
-	},
 
 	{
-		id : 3,
+		id : 1,
 		name : 'Colors',
 		image : assoc1,
 		color : '',
@@ -78,7 +65,7 @@ export default [
 	},
 
 	{
-		id : 3,
+		id : 1,
 		name : 'vh1',
 		image : assoc2,
 		color : '',
@@ -87,7 +74,7 @@ export default [
 	},
 
 	{
-		id : 3,
+		id : 1,
 		name : 'Comio Mobiles',
 		image : assoc4,
 		color : '',
@@ -96,7 +83,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 4,
+		id : 2,
 		name : 'Hawkeyed',
 		image : photopartner1,
 		color : '',
@@ -104,7 +91,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 5,
+		id : 3,
 		name : 'ZAP',
 		image : technology_partners1,
 		color : '',
@@ -112,7 +99,7 @@ export default [
 	},
 		{
 			link : '',
-		id : 6,
+		id : 4,
 		name : 'JMK',
 		image : overseas,
 		color : '',
@@ -120,7 +107,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 7,
+		id : 5,
 		name : 'Hero Cylces',
 		image : cycling_partners,
 		color : '',
@@ -128,7 +115,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 8,
+		id : 6,
 		name : 'Monte Carlo',
 		image : merch1,
 		color : '',
@@ -136,7 +123,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 9,
+		id : 7,
 		name : '92.7 Big FM',
 		image : fmpartner1,
 		color : '',
@@ -144,7 +131,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 10,
+		id : 8,
 		name : 'Chandigarh X',
 		image : mag_partner1,
 		color : '',
@@ -152,23 +139,23 @@ export default [
 	},
 	{
 		link : '',
-		id : 11,
+		id : 9,
 		name : 'Verka',
 		image : diary_partner1,
 		color : '',
 		type: 'Dairy Partner'
 	},
+    {
+        link : '',
+        id : 10,
+        name : 'TSN',
+        image : offmedia1,
+        color : '',
+        type: 'Official Inspiring Partner'
+    },
 	{
 		link : '',
-		id : 12,
-		name : 'TSN',
-		image : offmedia1,
-		color : '',
-		type: 'Official Inspiring Partner'
-	},
-	{
-		link : '',
-		id : 13,
+		id : 11,
 		name : 'PU Pulse',
 		image : youthpartner1,
 		color : '',
@@ -176,7 +163,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 14,
+		id : 12,
 		name : 'Coding Ninjas',
 		image : coding_prtnr1,
 		color : '',
@@ -184,7 +171,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 15,
+		id : 13,
 		name : 'Manforce',
 		image : safety_partner1,
 		color : '',
@@ -192,7 +179,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 16,
+		id : 14,
 		name : 'Pokermet',
 		image : assoc9,
 		color : '',
@@ -200,7 +187,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 17,
+		id : 15,
 		name : 'Kandhari Beverages',
 		image : food1,
 		color : '',
@@ -208,7 +195,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 18,
+		id : 16,
 		name : 'Ralco Tyres',
 		image : tyre_partner1,
 		color : '',
@@ -216,7 +203,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 19,
+		id : 17,
 		name : 'Mercedes',
 		image : assoc8,
 		color : '',
@@ -224,7 +211,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 19,
+		id : 17,
 		name : 'Strands',
 		image : assoc11,
 		color : '',
@@ -232,7 +219,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 19,
+		id : 17,
 		name : 'Bajaj Electricals',
 		image : assoc5,
 		color : '',
@@ -240,7 +227,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 19,
+		id : 17,
 		name : 'Bestech',
 		image : assoc3,
 		color : '',
@@ -248,7 +235,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 19,
+		id : 17,
 		name : 'GBP',
 		image : assoc6,
 		color : '',
@@ -256,7 +243,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 19,
+		id : 17,
 		name : 'GSP',
 		image : assoc7,
 		color : '',
@@ -264,7 +251,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 19,
+		id : 17,
 		name : 'SBI',
 		image : assoc10,
 		color : '',
@@ -272,15 +259,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 19,
-		name : 'I m in',
-		image : assoc12,
-		color : '',
-		type: 'Associate Sponsors'
-	},
-	{
-		link : '',
-		id : 19,
+		id : 17,
 		name : 'MTV Beats',
 		image : assoc14,
 		color : '',
@@ -288,7 +267,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 19,
+		id : 17,
 		name : 'MTV',
 		image : assoc13,
 		color : '',
@@ -296,7 +275,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 19,
+		id : 17,
 		name : 'Droom.in',
 		image : assoc16,
 		color : '',
@@ -304,7 +283,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 19,
+		id : 17,
 		name : 'Comedy Central',
 		image : assoc15,
 		color : '',
@@ -312,7 +291,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 20,
+		id : 18,
 		name : 'The CS Kafé',
 		image : food2,
 		color : '',
@@ -320,7 +299,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 20,
+		id : 18,
 		name : 'Naman Passion Et',
 		image : food4,
 		color : '',
@@ -328,7 +307,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 20,
+		id : 18,
 		name : 'Guru Nanak Sweets',
 		image : food5,
 		color : '',
@@ -336,7 +315,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 20,
+		id : 18,
 		name : 'Kamal Caterers',
 		image : food7,
 		color : '',
@@ -344,15 +323,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 20,
-		name : 'Wai Wai City',
-		image : food8,
-		color : '',
-		type: 'Food Partners'
-	},
-	{
-		link : '',
-		id : 20,
+		id : 18,
 		name : 'Major Changs',
 		image : food6,
 		color : '',
@@ -360,7 +331,7 @@ export default [
 	},
 	{
 		link : '',
-		id : 20,
+		id : 18,
 		name : 'Taste Battles',
 		image : food9,
 		color : '',
@@ -368,10 +339,67 @@ export default [
 	},
 	{
 		link : '',
-		id : 20,
+		id : 18,
 		name : 'Eatstreet',
 		image : food3,
 		color : '',
 		type : 'Food Partners'
-	}
+	},
+    {
+        link : '',
+        id : 19,
+        name : 'CareerGuide',
+        image : ca1,
+        color : '',
+        type : 'Campus Ambassador Partners'
+    },
+    {
+        link : '',
+        id : 19,
+        name : 'Eat My News',
+        image : ca2,
+        color : '',
+        type : 'Campus Ambassador Partners'
+    },
+	{
+        link : '',
+        id : 19,
+        name : 'Emitap Entertainments',
+        image : ca3,
+        color : '',
+        type : 'Campus Ambassador Partners'
+    },
+	{
+        link : '',
+        id : 19,
+        name : 'InsideIIM',
+        image : ca4,
+        color : '',
+        type : 'Campus Ambassador Partners'
+    },
+	{
+        link : '',
+        id : 19,
+        name : 'Intern Theory',
+        image : ca5,
+        color : '',
+        type : 'Campus Ambassador Partners'
+    },
+	{
+        link : '',
+        id : 19,
+        name : 'Todaysera',
+        image : ca6,
+        color : '',
+        type : 'Campus Ambassador Partners'
+    },
+    {
+        link : '',
+        id : 19,
+        name : 'Jux Pux',
+        image : ca7,
+        color : '',
+        type : 'Campus Ambassador Partners'
+    }
+
 ]

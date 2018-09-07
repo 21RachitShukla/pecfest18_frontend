@@ -28,9 +28,9 @@ class BackgroundCanvas extends Component {
     this.backgroundColor.setHSL(0.0, 0.0, 0.0);
 
     var loader = new THREE.ImageLoader();
-    this.texture = THREE.ImageUtils.loadTexture('Images/background.jpg');
+    this.texture = THREE.ImageUtils.loadTexture('Images/test.jpg');
 
-    this.texture.repeat.set( 16, 8 );
+    this.texture.repeat.set( 1, 1 );
     this.texture.wrapS = THREE.RepeatWrapping;
     this.texture.wrapT = THREE.RepeatWrapping;
 
@@ -38,7 +38,7 @@ class BackgroundCanvas extends Component {
     this.geometry = new THREE.PlaneBufferGeometry( 10, 10 );
     this.meshCanvas = new THREE.Mesh( this.geometry, this.materialCanvas );
     this.meshCanvas.rotation.x = - Math.PI /2;
-    this.meshCanvas.scale.set( 1000, 250, 1000 );;
+    this.meshCanvas.scale.set( 97.67, 55, 100 );;
     this.scene.add(this.meshCanvas);
 
     window.addEventListener('resize', this.handleWindowResize);
@@ -80,8 +80,8 @@ class BackgroundCanvas extends Component {
 
 
   handleMouseMove = (event) => {
-    this.mouseX = (event.clientX - window.innerWidth / 2) / 1000;
-    this.mouseY = (event.clientY - window.innerHeight / 2) / 1000;
+    this.mouseX = (event.clientX - window.innerWidth / 2) / 5000;
+    this.mouseY = (event.clientY - window.innerHeight / 2) / 5000;
     this._changed = true;
   }
 
