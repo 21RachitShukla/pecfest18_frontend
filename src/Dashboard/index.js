@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import blank_img from './blank.png'
 import './index.css';
+import './notification.css';
 import EventRegistrations from './registeredEvents'
 import Notifications from "./notification";
 import user from '../user';
@@ -105,15 +106,18 @@ class Dashboard extends Component {
     </div>
     }
     else {
-      result = <div id="notif" className="notification_table">
+      result = <div id="notif" className="table-wrapper">
         <h1>Notifications</h1>
-        <table>
+        <table className="fl-table">
+        <thead>
         <tr>
           <th>Event</th>
           <th>Title</th>
           <th>Details</th>
         </tr>
-          {
+        </thead>
+        <tbody>
+          {/* for apis 
             notifs.map((notif, i) => (
               <Notifications
                 key={i}
@@ -122,7 +126,26 @@ class Dashboard extends Component {
                 notificationDetails={notif.notificationDetails}
               />
             ))
-          }
+          */}
+
+        {/*For testing*/}
+        <Notifications key ={0} />
+        <Notifications key ={1} />
+        <Notifications key ={2} />
+        <Notifications key ={3} />
+        <Notifications key ={4} />
+        <Notifications key ={5} />
+        <Notifications key ={6} />
+        <Notifications key ={7} />
+        <Notifications key ={8} />
+        <Notifications key ={9} />
+        <Notifications key ={10} />
+        <Notifications key ={11} />
+        <Notifications key ={12} />
+        <Notifications key ={13} />
+        <Notifications key ={14} />
+        <Notifications key ={15} />
+          </tbody>
         </table>
       </div>
     }
@@ -131,27 +154,28 @@ class Dashboard extends Component {
       <div id="main-div" className="flex-container">
         
         <div className="flex_right">
-          <div>
+          <div className="user_information">
             {/*<h1>PECFEST 2018</h1>*/}
             <img src={blank_img} alt="User Avatar"/>
 
             <h2>{user.pecfestId}</h2>
           </div>
-          <div>
+
+          <div className="user_information">
             <hr style={{borderTop: '3px solid'}}/>
             <p>Participant, Pecfest 2018</p>
-            
+          </div>
           <br/><br/>
-          <ul className="buttons_list">
-          <li className="button_internal reg" onClick={this.displayRegisteredEvents}
-          ontouchstart={this.displayRegisteredEvents}>
-            <a href="#">Registered Events</a>
-          </li>
           
-          <li className="button_internal notif" onClick={this.displayNotifications}
-          ontouchstart={this.displayNotifications}>
-            <a href="#">Notifications</a>
-          </li>
+          <ul className="buttons_list">
+            <li className="button_internal reg" onClick={this.displayRegisteredEvents}
+            ontouchstart={this.displayRegisteredEvents}>
+              <a href="#">Registered Events</a>
+            </li>
+            <li className="button_internal notif" onClick={this.displayNotifications}
+            ontouchstart={this.displayNotifications}>
+              <a href="#">Notifications</a>
+            </li>
           </ul>
 
             {/*<div className="grid-container-card">
@@ -173,7 +197,7 @@ class Dashboard extends Component {
                                   </div>
                               </div>
               </div>*/}
-          </div>
+          
         </div>
 
 

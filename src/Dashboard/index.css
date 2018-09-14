@@ -36,6 +36,7 @@
 	color: var(--text_color);
 	background-color: var(--main_color);
 	/*height:1000px;*/
+	height:100vh;
 	padding-top: 3em;
 	/*padding-left: 0.3em;*/
 	text-align: center;
@@ -112,11 +113,12 @@ th
 	/*overflow: scroll;*/
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 767px) {
 	.flex-container
 	{
 		display: flex;
-		flex-flow:column-reverse nowrap;
+		flex-flow:column nowrap;
+		overflow-y: scroll;
 	}
 	.buttons
 	{
@@ -126,9 +128,18 @@ th
 		background-color: var(--main_color);
 		color: var(--text_color);
 	}
-	.flex_right
+	.user_information
 	{
 		display: none;
+		/*height:90%;*/
+	}
+	ul{
+		text-align:center;
+		padding-top: 0px;
+	}
+	ul li{
+		display: inline-block;
+		padding-right: 1em;
 	}
 }
 
