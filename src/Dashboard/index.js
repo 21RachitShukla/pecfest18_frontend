@@ -106,47 +106,49 @@ class Dashboard extends Component {
     </div>
     }
     else {
-      result = <div id="notif" className="table-wrapper">
+      result = <div id="notif">
         <h1>Notifications</h1>
-        <table className="fl-table">
-        <thead>
-        <tr>
-          <th>Event</th>
-          <th>Title</th>
-          <th>Details</th>
-        </tr>
-        </thead>
-        <tbody>
-          {/* for apis 
-            notifs.map((notif, i) => (
-              <Notifications
-                key={i}
-                event={notif.eventName}
-                notificationTitle={notif.notificationTitle}
-                notificationDetails={notif.notificationDetails}
-              />
-            ))
-          */}
+        <div className="table-wrapper">
+          <table className="fl-table">
+          <thead>
+          <tr>
+            <th>Event</th>
+            <th>Title</th>
+            <th>Details</th>
+          </tr>
+          </thead>
+          <tbody>
+            {/* for apis 
+              notifs.map((notif, i) => (
+                <Notifications
+                  key={i}
+                  event={notif.eventName}
+                  notificationTitle={notif.notificationTitle}
+                  notificationDetails={notif.notificationDetails}
+                />
+              ))
+            */}
 
-        {/*For testing*/}
-        <Notifications key ={0} />
-        <Notifications key ={1} />
-        <Notifications key ={2} />
-        <Notifications key ={3} />
-        <Notifications key ={4} />
-        <Notifications key ={5} />
-        <Notifications key ={6} />
-        <Notifications key ={7} />
-        <Notifications key ={8} />
-        <Notifications key ={9} />
-        <Notifications key ={10} />
-        <Notifications key ={11} />
-        <Notifications key ={12} />
-        <Notifications key ={13} />
-        <Notifications key ={14} />
-        <Notifications key ={15} />
-          </tbody>
-        </table>
+          {/*For testing*/}
+          <Notifications key ={0} />
+          <Notifications key ={1} />
+          <Notifications key ={2} />
+          <Notifications key ={3} />
+          <Notifications key ={4} />
+          <Notifications key ={5} />
+          <Notifications key ={6} />
+          <Notifications key ={7} />
+          <Notifications key ={8} />
+          <Notifications key ={9} />
+          <Notifications key ={10} />
+          <Notifications key ={11} />
+          <Notifications key ={12} />
+          <Notifications key ={13} />
+          <Notifications key ={14} />
+          <Notifications key ={15} />
+            </tbody>
+          </table>
+        </div>
       </div>
     }
 
@@ -201,14 +203,8 @@ class Dashboard extends Component {
         </div>
 
 
-        <div className="flex_left">
-
-          {/*buttons*/}
-          <div id="buttons-id" className="buttons">
-          </div>
-        
+        <div className="flex_left">        
           <div className="result">{result}</div>
-
         </div>
     </div>
 

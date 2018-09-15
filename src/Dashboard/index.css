@@ -117,7 +117,7 @@ th
 	.flex-container
 	{
 		display: flex;
-		flex-flow:column nowrap;
+		flex-flow:column-reverse nowrap;
 		overflow-y: scroll;
 	}
 	.buttons
@@ -128,7 +128,7 @@ th
 		background-color: var(--main_color);
 		color: var(--text_color);
 	}
-	.user_information
+	.flex_right
 	{
 		display: none;
 		/*height:90%;*/
