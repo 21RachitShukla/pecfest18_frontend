@@ -74,7 +74,7 @@ class Dashboard extends Component {
 
     if (registeredEvents) {
       result = <div id="reg" className="registration_table">
-      <h1 className="headings">Registered Events</h1>
+      <h1 className="bigScreensOnly">Registered Events</h1>
         {/* Api ke saath aisa chalega
           {
             events.map((event, i) => (
@@ -107,7 +107,7 @@ class Dashboard extends Component {
     }
     else {
       result = <div id="notif">
-        <h1>Notifications</h1>
+        <h1 className="bigScreensOnly">Notifications</h1>
         <div className="table-wrapper">
           <table className="fl-table">
           <thead>
@@ -152,9 +152,25 @@ class Dashboard extends Component {
       </div>
     }
 
+    var buttons_class_reg = (registeredEvents?"button_internal_reg button_internal":"button_internal");
+
+    var buttons_class_notifs = (registeredEvents?"button_internal" : "button_internal button_internal_notif")
+
+    var mobileButton = <ul className="buttons_for_mobile">
+            <li className={buttons_class_reg} onClick={this.displayRegisteredEvents}
+            ontouchstart={this.displayRegisteredEvents}>
+              <a href="#">Registered Events</a>
+            </li>
+            <li className={buttons_class_notifs} onClick={this.displayNotifications}
+            ontouchstart={this.displayNotifications}>
+              <a href="#">Notifications</a>
+            </li>
+          </ul>
+
     return (
       <div id="main-div" className="flex-container">
-        
+        {mobileButton}
+
         <div className="flex_right">
           <div className="user_information">
             {/*<h1>PECFEST 2018</h1>*/}
@@ -169,12 +185,13 @@ class Dashboard extends Component {
           </div>
           <br/><br/>
           
+
           <ul className="buttons_list">
-            <li className="button_internal reg" onClick={this.displayRegisteredEvents}
+            <li className={buttons_class_reg} onClick={this.displayRegisteredEvents}
             ontouchstart={this.displayRegisteredEvents}>
               <a href="#">Registered Events</a>
             </li>
-            <li className="button_internal notif" onClick={this.displayNotifications}
+            <li className={buttons_class_notifs} onClick={this.displayNotifications}
             ontouchstart={this.displayNotifications}>
               <a href="#">Notifications</a>
             </li>

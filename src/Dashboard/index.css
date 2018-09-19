@@ -64,6 +64,16 @@
 	margin-bottom : 1em;
 }
 
+.button_internal_reg{
+	font-weight: bold;
+	font-stretch: expanded;
+}
+
+.button_internal_notif{
+	font-weight: bold;
+	font-stretch: expanded;
+}
+
 /*.button_internal
 {
 	height: 40px;
@@ -113,11 +123,15 @@ th
 	/*overflow: scroll;*/
 }
 
+.buttons_for_mobile{
+	display: none;
+}
+
 @media screen and (max-width: 767px) {
 	.flex-container
 	{
 		display: flex;
-		flex-flow:column-reverse nowrap;
+		flex-flow:column nowrap;
 		overflow-y: scroll;
 	}
 	.buttons
@@ -131,16 +145,24 @@ th
 	.flex_right
 	{
 		display: none;
-		/*height:90%;*/
 	}
-	ul{
+
+	.buttons_for_mobile
+	{
+		display: block;
 		text-align:center;
-		padding-top: 0px;
+		/*padding-right:0.5em;*/
+		padding: 0.5em 0.3em 0em 0.3em;
+		font-size:1.5rem;
+		overflow-x: hidden;
+		background-color: var(--main_color);
+		color:var(--text_color); 
 	}
-	ul li{
-		display: inline-block;
-		padding-right: 1em;
-	}
+
+	/*.bigScreensOnly
+	{
+		display: none;
+	}*/
 }
 
 .headings{
