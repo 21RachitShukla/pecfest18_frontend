@@ -1,13 +1,20 @@
-import React, { Component } from 'react';
-import { Motion, spring } from 'react-motion';
+import React, {Component} from 'react';
+import {Motion, spring} from 'react-motion';
 import user from './user';
 import SubmitButton from './components/SubmitButton';
 import {MdArrowForward} from 'react-icons/lib/md';
 import 'md5';
 import './SignUpOrLoginForm.css';
 import './SignUpForm.css';
-import { Redirect } from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import Dashboard from './Dashboard/index';
+import {ScrollBox, ScrollAxes, FastTrack} from 'react-scroll-box';
+
+const divStyle = {
+    overflowY: 'auto',
+    position: 'relative'
+}
+
 class VerifyOtpForm extends Component {
     state = {
         status: '',
@@ -29,16 +36,18 @@ class VerifyOtpForm extends Component {
     };
 
     handleNext = () => {
-        user.verifyOtp(this.state.otp, this.props.mobile, { onSuccess: (id) => {
+        user.verifyOtp(this.state.otp, this.props.mobile, {
+            onSuccess: (id) => {
                 this.props.done(id)
                 setTimeout(this.props.onSuccess, 1000);
             },
-            onFailed: this.handleFailed });
-        this.setState({ checking: true });
+            onFailed: this.handleFailed
+        });
+        this.setState({checking: true});
     };
 
-    handleChange = ({ target }) => {
-        this.setState({ otp: target.value, error: false });
+    handleChange = ({target}) => {
+        this.setState({otp: target.value, error: false});
     };
 
 
@@ -55,7 +64,7 @@ class VerifyOtpForm extends Component {
                         <div className="Input">
                             <input
                                 id="otp"
-                                ref = "otp"
+                                ref="otp"
                                 disabled={this.state.checking}
                                 type="password"
                                 autoComplete={false}
@@ -65,11 +74,12 @@ class VerifyOtpForm extends Component {
                         </div>
                     </div>
                     <div className={'submitButtonLogin'}>
-                        <button type={'submit'} className={'submitSignUp'} onSubmit={this.handleNext}><MdArrowForward/></button>
+                        <button type={'submit'} className={'submitSignUp'} onSubmit={this.handleNext}><MdArrowForward/>
+                        </button>
                         {
                             this.state.error ? <p>{this.state.message}</p> : ""
                         }
-					</div>
+                    </div>
                 </form>
             </div>
         );
@@ -82,20 +92,22 @@ class GetFirstName extends Component {
     }
 
     handleNext = () => {
-        this.props.done({ fName : this.state.fName});
+        this.props.done({fName: this.state.fName});
     }
 
     isValid() {
         var res = this.state.fName.split(" ");
-        if(res.length > 1){
+        if (res.length > 1) {
             return false;
         }
         return this.state.fName.length > 2;
 
     }
+
     handleChange = ({target}) => {
-        this.setState({fName : target.value});
+        this.setState({fName: target.value});
     }
+
     get() {
         return this.state.fName;
     }
@@ -120,23 +132,25 @@ class GetFirstName extends Component {
 class GetLastName extends Component {
 
     state = {
-        lName : '',
+        lName: '',
     }
     handleNext = () => {
-        this.props.done({ lName : this.state.lName});
+        this.props.done({lName: this.state.lName});
     }
 
     isValid() {
         var res = this.state.lName.split(" ");
-        if(res.length > 1){
+        if (res.length > 1) {
             return false;
         }
         return this.state.lName.length > 2;
 
     }
+
     handleChange = ({target}) => {
-        this.setState({lName : target.value});
+        this.setState({lName: target.value});
     }
+
     get() {
         return this.state.lName;
     }
@@ -160,7 +174,7 @@ class GetLastName extends Component {
 
 class GetNumber extends Component {
     state = {
-        mobile:' ',
+        mobile: ' ',
         error: true,
     }
 
@@ -168,17 +182,17 @@ class GetNumber extends Component {
         return this.state.mobile;
     }
 
-    handleNext = ({ target }) => {
-        this.setState({ error: !target.value.match(/[0-9]{10,10}/) })
-        this.props.done({ mobile: this.state.mobile });
+    handleNext = ({target}) => {
+        this.setState({error: !target.value.match(/[0-9]{10,10}/)})
+        this.props.done({mobile: this.state.mobile});
     }
 
     isValid() {
         return !this.state.error;
     }
 
-    handleChange = ({ target }) => {
-        this.setState({ mobile: target.value,});
+    handleChange = ({target}) => {
+        this.setState({mobile: target.value,});
     }
 
     render() {
@@ -202,7 +216,7 @@ class GetCollege extends Component {
     };
 
     handleNext = () => {
-        this.props.done({ college: this.state.college });
+        this.props.done({college: this.state.college});
     };
 
     get() {
@@ -213,8 +227,8 @@ class GetCollege extends Component {
         return this.state.college.length !== 0;
     }
 
-    handleChange = ({ target }) => {
-        this.setState({ college: target.value });
+    handleChange = ({target}) => {
+        this.setState({college: target.value});
     };
 
     render() {
@@ -224,7 +238,7 @@ class GetCollege extends Component {
                 type="text"
                 autoComplete="false"
                 required
-                name = "collegeName"
+                name="collegeName"
                 placeholder="College/University"
                 onChange={this.handleChange}/>
         )
@@ -243,15 +257,17 @@ class GetEmail extends Component {
         return this.state.email;
     }
 
-    handleNext = ({ target }) => {
-        this.setState({ error: !target.value.match(emailre)})
-        this.props.done({ email: this.state.email ,
-            error: !target.value.match(emailre)});
+    handleNext = ({target}) => {
+        this.setState({error: !target.value.match(emailre)})
+        this.props.done({
+            email: this.state.email,
+            error: !target.value.match(emailre)
+        });
 
     }
 
-    handleChange = ({ target }) => {
-        this.setState({ email: target.value });
+    handleChange = ({target}) => {
+        this.setState({email: target.value});
     }
 
     render() {
@@ -259,9 +275,9 @@ class GetEmail extends Component {
             <input
                 id="emailId"
                 type="email"
-                autoComplete = "off"
+                autoComplete="off"
                 required
-                name = "emailId"
+                name="emailId"
                 placeholder="example@example.com"
                 onChange={this.handleChange}
                 on/>
@@ -273,7 +289,7 @@ const pwdre = /^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,}))$
 
 class GetPassword extends Component {
     state = {
-        pwd : '',
+        pwd: '',
         error: true,
     }
 
@@ -281,9 +297,9 @@ class GetPassword extends Component {
         return this.state.pwd;
     }
 
-    handleNext = ( { target }) => {
-        this.setState({ error: !target.value.match(pwdre)});
-        this.props.done({ pwd: this.state.pwd });
+    handleNext = ({target}) => {
+        this.setState({error: !target.value.match(pwdre)});
+        this.props.done({pwd: this.state.pwd});
     }
 
 
@@ -291,8 +307,8 @@ class GetPassword extends Component {
         return !this.state.error;
     }
 
-    handleChange = ({ target }) => {
-        this.setState({ pwd: target.value });
+    handleChange = ({target}) => {
+        this.setState({pwd: target.value});
     }
 
     render() {
@@ -301,7 +317,7 @@ class GetPassword extends Component {
                 id="password"
                 type="password"
                 required
-                name = "password"
+                name="password"
                 autoComplete="false"
                 placeholder="Password"
                 onChange={this.handleChange}/>
@@ -311,22 +327,22 @@ class GetPassword extends Component {
 }
 
 class GetGender extends Component {
-    state ={
-        gender:'Male',
+    state = {
+        gender: 'Male',
     };
 
-    get(){
+    get() {
         return this.state.gender;
     }
 
-    onChange = ({ event }) => {
-        this.setState({gender : document.getElementById('genderSelect').value});
+    onChange = ({event}) => {
+        this.setState({gender: document.getElementById('genderSelect').value});
     };
 
     render() {
         return (
             <div className="InputLabel">
-                <label><select id ="genderSelect" name="gender" onChange={this.onChange}>
+                <label><select id="genderSelect" name="gender" onChange={this.onChange}>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option value="Other">Other</option>
@@ -338,21 +354,22 @@ class GetGender extends Component {
 
 class GetAccomodationDetails extends Component {
     state = {
-        accomodation : '0',
+        accomodation: '0',
     }
 
     get() {
         return this.state.accomodation;
     }
 
-    onChange = ({ event }) => {
-        this.setState({accomodation : document.getElementById('accomodation').value});
+    onChange = ({event}) => {
+        this.setState({accomodation: document.getElementById('accomodation').value});
     }
 
     render() {
         return (
             <div class="InputLabel">
-                <label><input id={'accomodation'}  type="checkbox" name="accomodation" value='1' onChange={this.onChange}/>  Accomodation? </label>
+                <label><input id={'accomodation'} type="checkbox" name="accomodation" value='1'
+                              onChange={this.onChange}/> Accomodation? </label>
             </div>
 
         )
@@ -365,7 +382,7 @@ class FinalStep extends Component {
             <div className="FinalStep">
                 <p className="SignUpForm-description">
                     Your PECFEST ID is <span className="pecfestId">{this.props.pecfestId}</span>
-                    <br />
+                    <br/>
                     Now you can login and start registering for events.
                 </p>
                 <div className="Control-buttons">
@@ -390,7 +407,7 @@ export default class SignUpForm extends Component {
             disabled: true,
             gender: "Male",
             accomodation: 0,
-			message:'',
+            message: '',
             otpForm: false,
             signIn: false,
         };
@@ -412,7 +429,7 @@ export default class SignUpForm extends Component {
 
     handleDone = (prop) => {
         const user = Object.assign({}, this.state.user, prop);
-        this.setState({ user, disabled: false });
+        this.setState({user, disabled: false});
     };
 
     handleLogIn = event => {
@@ -420,7 +437,7 @@ export default class SignUpForm extends Component {
     };
 
     handleVerifyOtp = () => {
-        this.setState({ otp: true })
+        this.setState({otp: true})
     };
 
     handleSignUp = event => {
@@ -455,15 +472,15 @@ export default class SignUpForm extends Component {
         var md5 = require('md5');
         const newUser = {
             firstName: this.fName.current.get(),
-            lastName : this.lName.current.get(),
+            lastName: this.lName.current.get(),
             email: this.email.current.get(),
             mobile: this.mobileNumber.current.get(),
             college: this.college.current.get(),
             accomodation: this.accomodation.current.get(),
             gender: this.gender.current.get(),
-            password : md5(this.password.current.get())
+            password: md5(this.password.current.get())
         };
-        this.setState({ user: newUser } );
+        this.setState({user: newUser});
 
         user.signUp(newUser, {
             onSuccess: (res) => {
@@ -473,35 +490,43 @@ export default class SignUpForm extends Component {
                         if (verified) {
                             // send user to the login page
                             //this.props.onContinueToLogin()
-                            this.setState({ signIn: true});
+                            this.setState({signIn: true});
 
                         } else {
-                            this.setState({ submitting: false, otp: true, pecfestId: res.pecfestId, otpForm: true });
+                            this.setState({submitting: false, otp: true, pecfestId: res.pecfestId, otpForm: true});
 
                         }
                     },
                     onFailed: (err) => {
-                        this.setState({ submitting: false, error: true, message: err.message || 'Unknown error occured.' });
+                        this.setState({
+                            submitting: false,
+                            error: true,
+                            message: err.message || 'Unknown error occured.'
+                        });
                     }
                 })
             },
             onFailed: (err) => {
                 if (typeof err.ACK !== 'undefined') {
                     if (err.ACK === 'ALREADY') {
-                        this.setState({ message: 'Account already exists. Verifying...' });
+                        this.setState({message: 'Account already exists. Verifying...'});
                         user.checkVerified(this.state.user.mobile, {
                             onSuccess: verified => {
                                 console.log(verified);
                                 if (verified) {
                                     // send user to the login page
                                     //this.props.onContinueToLogin()
-                                    this.setState({ signIn: true});
+                                    this.setState({signIn: true});
                                 } else {
-                                    this.setState({ submitting: false, otp: true, otpForm: true })
+                                    this.setState({submitting: false, otp: true, otpForm: true})
                                 }
                             },
                             onFailed: (err) => {
-                                this.setState({ submitting: false, error: true, message: err.message || 'Unknown error occurred 2' });
+                                this.setState({
+                                    submitting: false,
+                                    error: true,
+                                    message: err.message || 'Unknown error occurred 2'
+                                });
                             }
                         })
                     }
@@ -509,18 +534,18 @@ export default class SignUpForm extends Component {
             }
         });
 
-        this.setState({ submitting: true, submitMessage: 'Verifying account...' });
+        this.setState({submitting: true, submitMessage: 'Verifying account...'});
     };
 
 
-    handleAccomo = ({ target }) => {
-        const user = { accomodation: target.checked - 0 };
-        this.setState({ accomodation: user.accomodation, disabled: false })
+    handleAccomo = ({target}) => {
+        const user = {accomodation: target.checked - 0};
+        this.setState({accomodation: user.accomodation, disabled: false})
     };
 
 
     handleChange = event => {
-        this.setState({ gender: event.target.value, disabled: false })
+        this.setState({gender: event.target.value, disabled: false})
     };
 
     handleId = id => {
@@ -538,47 +563,91 @@ export default class SignUpForm extends Component {
 
         // if (this.state.done) {
         return (
-            <FinalStep pecfestId={this.state.pecfestId} done={this.props.onSignUp} />
+            <FinalStep pecfestId={this.state.pecfestId} done={this.props.onSignUp}/>
         )
         // }
     }
 
-	render() {
+    render() {
+
+
         if (this.state.otpForm) {
             return (
-				<VerifyOtpForm onSuccess={() => this.setState({ otpForm: false })} mobile={this.mobileNumber.current.get()} />
+                <VerifyOtpForm onSuccess={() => this.setState({otpForm: false})}
+                               mobile={this.mobileNumber.current.get()}/>
 
             )
         }
 
-        if(this.state.signIn){
-            return <Redirect push to="/dashboard" exact component={ () => <Dashboard user={user} login={true}/>} />
+        if (this.state.signIn) {
+            return <Redirect push to="/dashboard" exact component={() => <Dashboard user={user} login={true}/>}/>
         }
-
-		return (
-            <div>
-                <h2>SIGN UP</h2>
-                <p>{this.state.message}</p>
-				<form onSubmit={this.handleSignUp} autoComplete={false}>
-                <div className="Input">
-                    <GetFirstName ref={this.fName} done={this.handleDone}/>
-                    <GetLastName ref={this.lName} done={this.handleDone}/>
+        if (!window.checkIfMobile()) {
+            return (
+                <div>
+                    <h2>SIGN UP</h2>
+                    <p>{this.state.message}</p>
+                    <form onSubmit={this.handleSignUp} autoComplete={false}>
+                        <div className="Input">
+                            <GetFirstName ref={this.fName} done={this.handleDone}/>
+                            <GetLastName ref={this.lName} done={this.handleDone}/>
+                        </div>
+                        <div className="Input">
+                            <GetNumber ref={this.mobileNumber} done={this.handleDone}/>
+                            <GetCollege ref={this.college} done={this.handleDone}/>
+                        </div>
+                        <div className="Input">
+                            <GetEmail ref={this.email} done={this.handleDone}/>
+                            <GetPassword ref={this.password} done={this.handleDone}/>
+                        </div>
+                        <div className={'Input'}>
+                            <GetGender ref={this.gender} done={this.handleDone}/>
+                            <GetAccomodationDetails ref={this.accomodation} done={this.handleDone}/>
+                        </div>
+                        <SubmitButton type={this.props.type} disabled={this.props.disabled} onSubmit={this.handleSignUp}
+                                      onClick={this.handleVerifyOtp}/>
+                    </form>
                 </div>
-                <div className="Input">
-                    <GetNumber ref={this.mobileNumber} done={this.handleDone}/>
-                    <GetCollege ref={this.college} done={this.handleDone}/>
+            )
+        }
+        else {
+            return (
+                <div>
+                    <h2>SIGN UP</h2>
+                    <p>{this.state.message}</p>
+                    <form onSubmit={this.handleSignUp} autoComplete={false}>
+                        <div className="Input">
+                            <GetFirstName ref={this.fName} done={this.handleDone}/>
+                        </div>
+                        <div className="Input">
+                            <GetLastName ref={this.lName} done={this.handleDone}/>
+                        </div>
+                        <div className="Input">
+                            <GetNumber ref={this.mobileNumber} done={this.handleDone}/>
+                        </div>
+                        <div className="Input">
+                            <GetCollege ref={this.college} done={this.handleDone}/>
+                        </div>
+                        <div className="Input">
+                            <GetEmail ref={this.email} done={this.handleDone}/>
+                        </div>
+                        <div className="Input">
+                            <GetPassword ref={this.password} done={this.handleDone}/>
+                        </div>
+                        <div className={'Input'}>
+                            <GetGender ref={this.gender} done={this.handleDone}/>
+                        </div>
+                        <div className="Input">
+                            <GetAccomodationDetails ref={this.accomodation} done={this.handleDone}/>
+                        </div>
+                        <div className="Input">
+                            <SubmitButton type={this.props.type} disabled={this.props.disabled}
+                                          onSubmit={this.handleSignUp}
+                                          onClick={this.handleVerifyOtp}/>
+                        </div>
+                    </form>
                 </div>
-                <div className="Input">
-                    <GetEmail ref={this.email} done={this.handleDone}/>
-                    <GetPassword ref={this.password} done={this.handleDone}/>
-                </div>
-                <div className={'Input'}>
-                    <GetGender ref={this.gender} done={this.handleDone}/>
-                    <GetAccomodationDetails ref={this.accomodation} done={this.handleDone}/>
-                </div>
-                <SubmitButton type={this.props.type} disabled={this.props.disabled} onSubmit={this.handleSignUp} onClick={this.handleVerifyOtp}/>
-				</form >
-			</div>
-		)
-	}
+            )
+        }
+    }
 }

@@ -212,30 +212,57 @@ export default class LoginForm extends Component {
         if (this.state.forgot) {
             return <ForgotIDForm onSuccess={() => this.setState({ forgot: false })} />
         }
-
-        return (
-            <div>
-                <form>
-                <h2>SIGN IN</h2>
+        if (!window.checkIfMobile()) {
+            return (
                 <div>
-                    <div className="Input">
-                        <GetEmail ref={this.username} done={this.handleDone}/>
-                    </div>
-                    <div className="Input">
-                        <GetPassword ref={this.password} done={this.handleDones}/>
-                    </div>
-                    <div className={'submitButtonLogin'}>
-                        <button className={'submitSignIn'} disabled={this.state.loggingin || this.state.error}
-                                onClick={this.handleClick}><MdArrowForward/></button>
-                    </div>
-                    <div className="Input">
-                        <a className='forgotPass' onClick={this.handleOnForgotPassword}>Forgot
-                            password?</a>
-                    </div>
+                    <form>
+                        <h2>SIGN IN</h2>
+                        <div>
+                            <div className="Input">
+                                <GetEmail ref={this.username} done={this.handleDone}/>
+                            </div>
+                            <div className="Input">
+                                <GetPassword ref={this.password} done={this.handleDones}/>
+                            </div>
+                            <div className={'submitButtonLogin'}>
+                                <button className={'submitSignIn'} disabled={this.state.loggingin || this.state.error}
+                                        onClick={this.handleClick}><MdArrowForward/></button>
+                            </div>
+                            <div className="Input">
+                                <a className='forgotPass' onClick={this.handleOnForgotPassword}>Forgot
+                                    password?</a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                </form>
-            </div>
 
-        );
+            );
+        }
+        else {
+            return (
+                <div>
+                    <form>
+                        <h2>SIGN IN</h2>
+                        <div>
+                            <div className="Input">
+                                <GetEmail ref={this.username} done={this.handleDone}/>
+                            </div>
+                            <div className="Input">
+                                <GetPassword ref={this.password} done={this.handleDones}/>
+                            </div>
+                            <div className={'submitButtonLogin'}>
+                                <button className={'submitSignIn'} disabled={this.state.loggingin || this.state.error}
+                                        onClick={this.handleClick}><MdArrowForward/></button>
+                            </div>
+                            <div className="Input">
+                                <a className='forgotPass' onClick={this.handleOnForgotPassword}>Forgot
+                                    password?</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            );
+        }
     }
 }

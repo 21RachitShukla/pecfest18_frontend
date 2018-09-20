@@ -12,6 +12,10 @@
 	color: gray;
 }
 
+.Scroll {
+	overflow: scroll;
+}
+
 input.SignUpInput {
 	width: 100%;
 	background: none;
